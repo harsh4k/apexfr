@@ -122,10 +122,10 @@ window.Director = (function () {
     core.addColorStop(1, "rgba(0,0,0,0)");
     ctx.fillStyle = core;
     ctx.fillRect(0, 0, w, h);
-    const band = h * (0.006 + 0.02 * g);
+    const band = h * (0.004 + 0.012 * g);
     const streak = ctx.createLinearGradient(0, 0, w, 0);
     streak.addColorStop(0, "rgba(120,160,255,0)");
-    streak.addColorStop(0.5, `rgba(235,240,255,${0.9 * g})`);
+    streak.addColorStop(0.5, `rgba(235,240,255,${0.55 * g})`);
     streak.addColorStop(1, "rgba(120,160,255,0)");
     ctx.fillStyle = streak;
     ctx.fillRect(0, cy - band / 2, w, band);

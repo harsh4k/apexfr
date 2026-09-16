@@ -40,3 +40,7 @@ _2026-09-16 19:41_ · code:PASS ui:PASS · code `09e31bcc2b83`
 ## T5 — UI glitches: hero clipping, responsive type, overlaps
 
 _2026-09-16 20:58_ · code:PASS ui:PASS runtime:PASS · code `2234d74a35fe`
+
+## T9 — Full visual pass and fixes
+
+_2026-09-16 21:09_ · code:PASS ui:PASS · code `c397bdcef2e8`

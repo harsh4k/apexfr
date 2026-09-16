@@ -2,7 +2,7 @@
   "schema": 1,
   "project": "Late Apex site",
   "created": "2026-09-16T15:36:22.044Z",
-  "updated": "2026-09-16T20:58:07.256Z",
+  "updated": "2026-09-16T21:09:26.839Z",
   "phase": "Phase 2 — polish, real content, legal",
   "active": null,
   "tasks": [
@@ -659,7 +659,7 @@
     {
       "id": "T9",
       "title": "Full visual pass and fixes",
-      "state": "TODO",
+      "state": "DONE",
       "deps": [
         "T2",
         "T3",
@@ -669,12 +669,89 @@
         "T7",
         "T8"
       ],
-      "attempts": 0,
-      "evidence": {},
-      "notes": [],
-      "started": null,
-      "finished": null,
-      "blockedReason": null
+      "attempts": 1,
+      "evidence": {
+        "code": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T21:07:35.976Z",
+          "codeHash": "c397bdcef2e8009dbce83c6e83e9cfca337fb1f9201a8ecf1ed60d17ddbed682"
+        },
+        "runtime": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T21:07:37.290Z",
+          "codeHash": "c397bdcef2e8009dbce83c6e83e9cfca337fb1f9201a8ecf1ed60d17ddbed682"
+        },
+        "ui": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T21:09:26.266Z",
+          "codeHash": "c397bdcef2e8009dbce83c6e83e9cfca337fb1f9201a8ecf1ed60d17ddbed682",
+          "coverage": {
+            "routes": [
+              "/",
+              "/about.html",
+              "/contact.html",
+              "/licence.html",
+              "/pricing.html",
+              "/privacy.html",
+              "/refunds.html",
+              "/services.html",
+              "/terms.html",
+              "/work.html"
+            ],
+            "viewports": [
+              "mobile",
+              "desktop"
+            ],
+            "states": [
+              "default"
+            ],
+            "checks": 20,
+            "consoleErrors": 0,
+            "failedRequests": 0
+          }
+        }
+      },
+      "notes": [
+        {
+          "ts": "2026-09-16T21:05:22.501Z",
+          "text": "Email hello@lateapex.studio is a placeholder: register a domain (or give a real address) and update site/js/brand.js + the contact page.",
+          "kind": "client"
+        },
+        {
+          "ts": "2026-09-16T21:05:22.605Z",
+          "text": "The name 'Late Apex' has not been checked for trademark or domain availability.",
+          "kind": "client"
+        },
+        {
+          "ts": "2026-09-16T21:05:22.715Z",
+          "text": "Forms (brief, newsletter) validate and confirm but send nothing; they need a backend (e.g. Supabase or Formspree) before launch.",
+          "kind": "followup"
+        },
+        {
+          "ts": "2026-09-16T21:05:22.831Z",
+          "text": "Income figures were removed (the old ones were invented). Send real numbers to bring back an 'open books' section; same for testimonials.",
+          "kind": "client"
+        },
+        {
+          "ts": "2026-09-16T21:05:22.934Z",
+          "text": "Deploy: site/frames is ~350 MB and git-ignored; decide on Git LFS, object storage or uploading frames at deploy time.",
+          "kind": "followup"
+        },
+        {
+          "ts": "2026-09-16T21:05:23.030Z",
+          "text": "Agreements / contract templates are the next phase (owner request).",
+          "kind": "followup"
+        }
+      ],
+      "started": "2026-09-16T20:58:18.840Z",
+      "finished": "2026-09-16T21:09:26.837Z",
+      "blockedReason": null,
+      "base": "28648024d9fcdc223cec43edc164366341ce0341",
+      "recovery": {
+        "round": 0,
+        "failures": [],
+        "stop": null
+      }
     }
   ],
   "log": [
@@ -1057,6 +1134,61 @@
       "ts": "2026-09-16T20:58:07.256Z",
       "event": "done",
       "detail": "T5 (code:PASS ui:PASS runtime:PASS)"
+    },
+    {
+      "ts": "2026-09-16T20:58:18.841Z",
+      "event": "start",
+      "detail": "T9 (attempt 1, checkpoint clean tree)"
+    },
+    {
+      "ts": "2026-09-16T21:05:22.502Z",
+      "event": "note",
+      "detail": "T9 [client]: Email hello@lateapex.studio is a placeholder: register a dom"
+    },
+    {
+      "ts": "2026-09-16T21:05:22.606Z",
+      "event": "note",
+      "detail": "T9 [client]: The name 'Late Apex' has not been checked for trademark or d"
+    },
+    {
+      "ts": "2026-09-16T21:05:22.715Z",
+      "event": "note",
+      "detail": "T9 [followup]: Forms (brief, newsletter) validate and confirm but send noth"
+    },
+    {
+      "ts": "2026-09-16T21:05:22.832Z",
+      "event": "note",
+      "detail": "T9 [client]: Income figures were removed (the old ones were invented). Se"
+    },
+    {
+      "ts": "2026-09-16T21:05:22.934Z",
+      "event": "note",
+      "detail": "T9 [followup]: Deploy: site/frames is ~350 MB and git-ignored; decide on Gi"
+    },
+    {
+      "ts": "2026-09-16T21:05:23.030Z",
+      "event": "note",
+      "detail": "T9 [followup]: Agreements / contract templates are the next phase (owner re"
+    },
+    {
+      "ts": "2026-09-16T21:07:36.016Z",
+      "event": "evidence",
+      "detail": "T9/code PASS"
+    },
+    {
+      "ts": "2026-09-16T21:07:37.315Z",
+      "event": "evidence",
+      "detail": "T9/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T21:09:26.292Z",
+      "event": "evidence",
+      "detail": "T9/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T21:09:26.839Z",
+      "event": "done",
+      "detail": "T9 (code:PASS ui:PASS)"
     }
   ]
 }
