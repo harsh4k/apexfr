@@ -2,7 +2,7 @@
   "schema": 1,
   "project": "Late Apex site",
   "created": "2026-09-16T15:36:22.044Z",
-  "updated": "2026-09-16T19:33:05.572Z",
+  "updated": "2026-09-16T19:41:29.149Z",
   "phase": "Phase 2 — polish, real content, legal",
   "active": null,
   "tasks": [
@@ -436,16 +436,68 @@
     {
       "id": "T8",
       "title": "Legal pages: privacy, terms, refunds, licence",
-      "state": "TODO",
+      "state": "DONE",
       "deps": [
         "T4"
       ],
-      "attempts": 0,
-      "evidence": {},
-      "notes": [],
-      "started": null,
-      "finished": null,
-      "blockedReason": null
+      "attempts": 1,
+      "evidence": {
+        "code": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:39:39.307Z",
+          "codeHash": "09e31bcc2b8300c157c278937386a07a15db4355a51a8367c1d61761aa653831"
+        },
+        "runtime": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:39:40.544Z",
+          "codeHash": "09e31bcc2b8300c157c278937386a07a15db4355a51a8367c1d61761aa653831"
+        },
+        "ui": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:41:28.716Z",
+          "codeHash": "09e31bcc2b8300c157c278937386a07a15db4355a51a8367c1d61761aa653831",
+          "coverage": {
+            "routes": [
+              "/",
+              "/about.html",
+              "/contact.html",
+              "/licence.html",
+              "/pricing.html",
+              "/privacy.html",
+              "/refunds.html",
+              "/services.html",
+              "/terms.html",
+              "/work.html"
+            ],
+            "viewports": [
+              "mobile",
+              "desktop"
+            ],
+            "states": [
+              "default"
+            ],
+            "checks": 20,
+            "consoleErrors": 0,
+            "failedRequests": 0
+          }
+        }
+      },
+      "notes": [
+        {
+          "ts": "2026-09-16T19:35:58.759Z",
+          "text": "Legal pages are templates drafted for DPDP 2023/IT Act, GDPR/UK GDPR, CCPA; still need a lawyer's review. Open placeholders: GSTIN (if registered) and late-payment fee.",
+          "kind": "client"
+        }
+      ],
+      "started": "2026-09-16T19:33:27.244Z",
+      "finished": "2026-09-16T19:41:29.147Z",
+      "blockedReason": null,
+      "base": "f3a4f99f8aaf58583e9cb06aa2a85e17e18d4bb7",
+      "recovery": {
+        "round": 0,
+        "failures": [],
+        "stop": null
+      }
     },
     {
       "id": "T9",
@@ -733,6 +785,36 @@
       "ts": "2026-09-16T19:33:05.572Z",
       "event": "done",
       "detail": "T7 (code:PASS ui:PASS)"
+    },
+    {
+      "ts": "2026-09-16T19:33:27.245Z",
+      "event": "start",
+      "detail": "T8 (attempt 1, checkpoint clean tree)"
+    },
+    {
+      "ts": "2026-09-16T19:35:58.760Z",
+      "event": "note",
+      "detail": "T8 [client]: Legal pages are templates drafted for DPDP 2023/IT Act, GDPR"
+    },
+    {
+      "ts": "2026-09-16T19:39:39.334Z",
+      "event": "evidence",
+      "detail": "T8/code PASS"
+    },
+    {
+      "ts": "2026-09-16T19:39:40.569Z",
+      "event": "evidence",
+      "detail": "T8/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T19:41:28.742Z",
+      "event": "evidence",
+      "detail": "T8/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T19:41:29.149Z",
+      "event": "done",
+      "detail": "T8 (code:PASS ui:PASS)"
     }
   ]
 }

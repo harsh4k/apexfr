@@ -1,3 +1,5 @@
+> Updated 17 Sep 2026: jurisdiction set to Mumbai, Maharashtra (from the GitHub profile location), third-party costs set to "at cost", care plan rate and cancellation aligned with the pricing page. Confirm these with your lawyer.
+
 # Legal Documents — Placeholder Checklist
 
 Before publishing any of these legal documents on your website, you **must** have a qualified lawyer review them for your jurisdiction and business model, then fill in all placeholders listed below.

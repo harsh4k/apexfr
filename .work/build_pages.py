@@ -18,6 +18,7 @@ PAGES = {
   "work": ("Work — Late Apex", "Projects built by Harshit Chauhan: Synapical, Coffee Digital, Velsaro and open-source work on GitHub."),
   "pricing": ("Pricing — Late Apex", "How Late Apex prices a website: number of pages times their complexity, with a live estimate in INR or USD."),
   "about": ("About — Late Apex", "Harshit Chauhan, the developer behind Late Apex: how he works and what he builds."),
+  "404": ("Page not found — Late Apex", "This page doesn't exist on the Late Apex site."),
   "contact": ("Contact — Late Apex", "Send a project brief to Late Apex and get a fixed quote within a working day."),
 }
 LEGAL = {
@@ -80,6 +81,8 @@ def build():
         print(name, out.count("\n"), "lines")
     for name, (heading, desc) in LEGAL.items():
         frag = (ROOT / f".work/legal/{name}.html").read_text(encoding="utf-8")
+        # unfilled placeholders stay visible until the owner fills them in
+        frag = re.sub(r"\[([A-Z][A-Z .,%]+[^\]]*)\]", r'<mark class="ph">[\1]</mark>', frag)
         toc = "".join(f'<li><a href="#{i}">{re.sub(r"<.*?>", "", h)}</a></li>'
                       for i, h in re.findall(r'<section id="([^"]+)">\s*<h2>(.*?)</h2>', frag))
         others = " · ".join(f'<a href="{k}.html"{" aria-current=\"page\"" if k == name else ""}>{v[0]}</a>' for k, v in LEGAL.items())
@@ -88,7 +91,7 @@ def build():
       <h1 data-split="words">{html.escape(heading)}</h1>
       <p class="legal__others">{others}</p>
     </section>
-    <div class="legal-wrap">
+    <div class="legal-wrap" data-busy>
       <nav class="legal__toc" aria-label="On this page"><p class="mono">On this page</p><ol>{toc}</ol></nav>
       <article class="legal">
 {frag}

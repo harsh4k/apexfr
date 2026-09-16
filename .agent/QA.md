@@ -85,3 +85,14 @@ Verified 2026-09-16 19:33 against code `29a08bb6f85e`.
   - viewports: mobile, desktop
   - states: default
   - 120 assertion(s) · 0 console error(s) · 0 failed request(s)
+
+## T8 — Legal pages: privacy, terms, refunds, licence
+
+Verified 2026-09-16 19:41 against code `09e31bcc2b83`.
+
+- **code** — PASS via `verify.mjs` · recorded 2026-09-16 19:39
+- **ui** — PASS via `playwright-script` · recorded 2026-09-16 19:41
+  - routes: /, /about.html, /contact.html, /licence.html, /pricing.html, /privacy.html, /refunds.html, /services.html, /terms.html, /work.html
+  - viewports: mobile, desktop
+  - states: default
+  - 120 assertion(s) · 0 console error(s) · 0 failed request(s)

@@ -32,3 +32,7 @@ _2026-09-16 19:23_ · code:PASS ui:PASS · code `e4bb43fb6094`
 ## T7 — Pricing: complexity x pages model + estimator
 
 _2026-09-16 19:33_ · code:PASS ui:PASS · code `29a08bb6f85e`
+
+## T8 — Legal pages: privacy, terms, refunds, licence
+
+_2026-09-16 19:41_ · code:PASS ui:PASS · code `09e31bcc2b83`

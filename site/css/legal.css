@@ -27,3 +27,4 @@
   .legal-wrap { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
   .legal__toc { position: static; }
 }
+.legal mark.ph { background: rgba(255,177,74,.18); color: var(--sodium); padding: 0 .25em; border-radius: 3px; font-family: var(--f-mono); font-size: .85em; }
