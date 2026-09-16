@@ -16,3 +16,7 @@ _2026-09-16 16:04_ · code:PASS ui:PASS runtime:PASS · code `6203ff71d590`
 ## T2 — Director v2: interpolated frames, sub-frame blend, push-through transitions
 
 _2026-09-16 16:11_ · code:PASS · code `fc0b60d68681`
+
+## T3 — Motion cleanup: no jerks, soft page transitions, pass-by bloom
+
+_2026-09-16 16:31_ · code:PASS ui:PASS · code `adfb63361387`

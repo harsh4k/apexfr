@@ -62,8 +62,11 @@
       const p = e.detail.p;
       if (slam) slam.classList.toggle("is-slammed", p >= at);
       el.classList.toggle("is-approach", p > 0.08);
-      if (wipe) wipe.style.transform = `scaleY(${range(p, 0.8, 0.98).toFixed(3)})`;
-      el.classList.toggle("is-wiped", p > 0.9);
+      // the tail-light glow blooms outward and becomes the footer's red
+      const r = range(p, 0.7, 0.99);
+      const eased = r * r * (3 - 2 * r);
+      if (wipe) wipe.style.setProperty("--r", `${(eased * 160).toFixed(2)}%`);
+      el.classList.toggle("is-wiped", eased > 0.3);
     });
   });
 })();

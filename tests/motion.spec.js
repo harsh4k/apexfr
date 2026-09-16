@@ -47,8 +47,9 @@ for (const file of ["index.html", "services.html"]) {
   test(`scrubbing ${file} changes the picture on most frames`, async ({ page }, info) => {
     test.skip(info.project.name === "mobile", "touch scrolling is covered on desktop sizes");
     await open(page, file);
-    // wait for the sharp frames of the first chapter
-    await page.waitForTimeout(2500);
+    // wait for the first chapter's frames, then a little for the rest
+    await page.waitForSelector('html[data-frames="ready"]', { timeout: 45_000 });
+    await page.waitForTimeout(1500);
     const series = await canvasSignatureSeries(page, 40, 14);
     let changes = 0;
     for (let i = 1; i < series.length; i++) if (series[i] !== series[i - 1]) changes++;
@@ -56,7 +57,7 @@ for (const file of ["index.html", "services.html"]) {
   });
 }
 
-test("navigating between pages keeps the curtain transition working", async ({ page }, info) => {
+test("navigating between pages lands on the right page", async ({ page }, info) => {
   test.skip((page.viewportSize()?.width ?? 0) < 900, "nav links are inside the menu on small screens");
   await open(page, "index.html");
   await page.locator('.nav__links a[href="pricing.html"]').click();

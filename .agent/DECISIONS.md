@@ -38,3 +38,9 @@ Racing term for the line that gives the fastest exit; fits the night-drift foota
 **Shot cuts use a fade-out → anamorphic headlight flare → fade-in instead of a crossfade; frames are 2x motion-interpolated (ffmpeg minterpolate) and neighbouring frames blend by the scroll fraction.**
 
 Owner said the old crossfade looked like a bad double exposure and scrubbing felt like slides; blur filter per frame also cost frame time.
+
+## 2026-09-16 16:27
+
+**Motion: reveal states only leave when fully off-screen; no scroll skew; no blur on reveals; native cross-document view transitions with an ink-fade fallback; loader only on the first page of a visit; pass-by ends in a feathered tail-light bloom.**
+
+Owner reported text popping out, jerky page changes and an awkward red wipe.

@@ -112,12 +112,15 @@ window.Motion = (function () {
       return;
     }
 
+    // Enter once a fifth is visible (or any part of a tall block); leave only
+    // when fully off-screen, so nothing ever vanishes while it can be seen.
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
-        if (en.isIntersecting) setState(en.target, "in");
-        else setState(en.target, en.boundingClientRect.top < 0 ? "above" : "below");
+        const tall = en.boundingClientRect.height > window.innerHeight * 0.5;
+        if (en.isIntersecting && (en.intersectionRatio >= 0.2 || tall)) setState(en.target, "in");
+        else if (!en.isIntersecting) setState(en.target, en.boundingClientRect.top < 0 ? "above" : "below");
       });
-    }, { rootMargin: "-6% 0px -6% 0px", threshold: 0 });
+    }, { threshold: [0, 0.2] });
     targets.forEach((el) => io.observe(el));
   }
 

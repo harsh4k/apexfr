@@ -1,4 +1,4 @@
-/* Shared page shell: nav, page-to-page curtain, loader, HUD, progress rail,
+/* Shared page shell: nav, page transitions, loader, HUD, progress rail,
    and the one render loop that drives the Director. Every page loads this. */
 (function () {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -31,10 +31,10 @@
   const rail = document.createElement("div");
   rail.className = "progress";
   rail.innerHTML = '<i id="progressBar"></i>';
-  const curtain = document.createElement("div");
-  curtain.className = "curtain";
-  curtain.innerHTML = `<span class="curtain__label">${document.title.split("—")[0].trim()}</span>`;
-  document.body.append(hud, rail, curtain);
+  const veil = document.createElement("div");
+  veil.className = "veil";
+  veil.setAttribute("aria-hidden", "true");
+  document.body.append(hud, rail, veil);
 
   // ---- Mobile menu ----
   const menuBtn = $("menuBtn");
@@ -47,43 +47,57 @@
   menuBtn.addEventListener("click", () => setMenu(!header.classList.contains("is-open")));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 
-  // ---- Page curtain: wipes up on load, drops down before leaving ----
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a[href]");
-    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || a.target === "_blank") return;
-    const url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || !url.pathname.endsWith(".html") && url.pathname !== "/") return;
-    if (url.pathname === location.pathname) return;
-    e.preventDefault();
-    setMenu(false);
-    if (reduced) { location.href = url.href; return; }
-    curtain.querySelector(".curtain__label").textContent = (a.textContent || "").replace(/^\d+/, "").trim();
-    curtain.classList.add("is-in");
-    setTimeout(() => { location.href = url.href; }, 650);
-  });
-  window.addEventListener("pageshow", (e) => { if (e.persisted) curtain.classList.remove("is-in"); });
+  // ---- Page transitions ----
+  // Browsers with cross-document view transitions animate natively (see
+  // pages.css). Others get a short fade to the page colour before leaving.
+  const nativeVT = "onpagereveal" in window;
+  if (!nativeVT) {
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest("a[href]");
+      if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || a.target === "_blank") return;
+      const url = new URL(a.href, location.href);
+      if (url.origin !== location.origin || url.pathname === location.pathname) return;
+      e.preventDefault();
+      setMenu(false);
+      if (reduced) { location.href = url.href; return; }
+      veil.classList.add("is-on");
+      setTimeout(() => { location.href = url.href; }, 260);
+    });
+  }
+  window.addEventListener("pageshow", () => veil.classList.remove("is-on"));
 
   // ---- Boot ----
+  // Text and layout are live immediately; the footage streams in behind them.
+  // The full loader only runs on the first page of a visit.
   const loader = $("loader");
   const bar = $("loaderBar");
-  document.body.classList.add("is-loading");
+  let firstVisit = true;
+  try { firstVisit = !sessionStorage.getItem("la-visited"); sessionStorage.setItem("la-visited", "1"); } catch { /* storage blocked */ }
   let loaded = 0;
-  const { first } = Director.init(() => {
+  const { first, full } = Director.init(() => {
     loaded++;
-    if (bar) bar.style.transform = `scaleX(${Math.min(1, loaded / 80)})`;
-    kick();
-  });
-  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
-  Promise.all([first, fonts, new Promise((r) => setTimeout(r, 500))]).then(() => {
-    Motion.init();
-    Director.measure();
-    if (loader) loader.classList.add("is-done");
-    curtain.classList.add("is-out");
-    document.body.classList.remove("is-loading");
+    if (bar) bar.style.transform = `scaleX(${Math.min(1, loaded / 60)})`;
     kick();
   });
   window.ScrollState = { vel: 0 };
+  full.then(() => document.documentElement.setAttribute("data-frames", "ready"));
   Interact.init();
+  Motion.init();
+  const ready = () => {
+    Director.measure();
+    if (loader) loader.classList.add("is-done");
+    document.body.classList.remove("is-loading");
+    setTimeout(kick);   // the loop's state is declared further down
+  };
+  if (loader && firstVisit && !reduced) {
+    document.body.classList.add("is-loading");
+    const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+    Promise.all([first, fonts, new Promise((r) => setTimeout(r, 600))]).then(ready);
+  } else {
+    if (loader) loader.remove();
+    ready();
+    first.then(() => { Director.measure(); kick(); });
+  }
 
   // ---- Loop (sleeps when idle) ----
   const root = document.documentElement;
@@ -122,7 +136,6 @@
     }
     set(barEl, "bar", "transform", `scaleY(${max > 0 ? (y / max).toFixed(4) : 0})`);
     if (!reduced) {
-      set(root, "skew", "--skew", `${Math.max(-2.5, Math.min(2.5, v * 0.18)).toFixed(2)}deg`);
       set(shade, "vel", "--vel", Math.min(1, Math.abs(v) / 25).toFixed(2));
     }
 

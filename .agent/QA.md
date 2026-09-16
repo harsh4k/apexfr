@@ -38,3 +38,14 @@ Verified 2026-09-16 16:11 against code `fc0b60d68681`.
 
 Recovery: 1 failed verification(s) over 1 attempt(s).
 - #1 runtime FAIL — ENVIRONMENT
+
+## T3 — Motion cleanup: no jerks, soft page transitions, pass-by bloom
+
+Verified 2026-09-16 16:31 against code `adfb63361387`.
+
+- **code** — PASS via `verify.mjs` · recorded 2026-09-16 16:30
+- **ui** — PASS via `playwright-script` · recorded 2026-09-16 16:31
+  - routes: /, /about.html, /contact.html, /pricing.html, /services.html, /work.html
+  - viewports: mobile, desktop
+  - states: default
+  - 72 assertion(s) · 0 console error(s) · 0 failed request(s)

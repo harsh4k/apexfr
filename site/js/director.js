@@ -249,7 +249,8 @@ window.Director = (function () {
     const shots = [...new Set(chapters.map((c) => c.shot))];
     const previews = shots.map((s) => loadShot(s, previewTier(s), 4));
     const firstSharp = chapters.length ? loadShot(chapters[0].shot, sharpTier(chapters[0].shot), 4) : Promise.resolve();
-    return { first: Promise.all([...previews, firstSharp]), shots };
+    const previewsDone = Promise.all(previews).then(() => Promise.all(shots.map((s) => store[s][previewTier(s)].done)));
+    return { first: Promise.all([...previews, firstSharp]), full: previewsDone, shots };
   }
 
   return { init, update, measure };

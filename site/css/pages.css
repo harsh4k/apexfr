@@ -1,4 +1,4 @@
-/* Multi-page layer: chapters, pinned stages, set pieces, page curtain. */
+/* Multi-page layer: chapters, pinned stages, set pieces, page transitions. */
 
 /* ---------- Chapters ---------- */
 .chapter { position: relative; }
@@ -26,17 +26,14 @@
 /* ---------- Nav additions ---------- */
 .nav__links a small { font-size: .6rem; color: var(--brake); margin-right: .35rem; vertical-align: super; }
 
-/* ---------- Page curtain ---------- */
-.curtain {
-  position: fixed; inset: 0; z-index: 120; pointer-events: none;
-  display: grid; place-items: center; background: var(--brake);
-  transform: scaleY(1); transform-origin: top;
-  transition: transform .9s var(--ease-in-out);
-}
-.curtain__label { font: 900 clamp(3rem, 10vw, 8rem)/1 var(--f-display); text-transform: uppercase; color: var(--ink); opacity: 0; transition: opacity .3s .3s; }
-.curtain.is-out { transform: scaleY(0); }
-.curtain.is-out.is-in { transform-origin: bottom; transform: scaleY(1); transition-duration: .6s; }
-.curtain.is-in .curtain__label { opacity: 1; }
+/* ---------- Page transitions ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: vt-out .32s var(--ease-in-out) both; }
+::view-transition-new(root) { animation: vt-in .55s var(--ease-out) both; }
+@keyframes vt-out { to { opacity: 0; transform: translateY(-14px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(18px); } }
+.veil { position: fixed; inset: 0; z-index: 120; background: var(--ink); opacity: 0; pointer-events: none; transition: opacity .26s var(--ease-in-out); }
+.veil.is-on { opacity: 1; }
 
 /* ---------- Route cards (home) ---------- */
 .routes { display: grid; gap: 1px; margin-top: 2rem; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
@@ -93,9 +90,16 @@
 .passby:not(.is-approach) .cta__title .line:first-child { opacity: .2; transform: scale(.94); }
 [data-slam] { opacity: 0; transform: scale(1.35) skewX(-8deg); transition: opacity .35s, transform .7s cubic-bezier(.2, 1.6, .4, 1); }
 [data-slam].is-slammed { opacity: 1; transform: none; }
-.wipe { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, var(--brake), var(--brake-deep)); transform: scaleY(0); transform-origin: bottom; pointer-events: none; }
+.wipe {
+  --r: 0%;
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle at 50% 62%, #ff4a5c 0%, var(--brake) 35%, var(--brake-deep) 100%);
+  /* feathered edge, like light spilling rather than a shape growing */
+  -webkit-mask-image: radial-gradient(circle at 50% 62%, #000 calc(var(--r) - 18%), transparent var(--r));
+  mask-image: radial-gradient(circle at 50% 62%, #000 calc(var(--r) - 18%), transparent var(--r));
+}
 .passby .pin-inner { isolation: isolate; }
-.passby .pin-inner > * { transition: color .4s; }
+.passby .pin-inner > *, .passby .line, .passby .btn { transition: color .45s, background-color .45s, border-color .45s, opacity .6s, transform .9s var(--ease-out); }
 .passby.is-wiped .pin-inner, .passby.is-wiped .line--brake, .passby.is-wiped .eyebrow, .passby.is-wiped .body { color: var(--ink); filter: none; }
 .passby.is-wiped .btn--brake { --bg: var(--ink); color: var(--paper); }
 .passby.is-wiped .btn--ghost { border-color: rgba(7,8,11,.4); color: var(--ink); background: transparent; }
@@ -160,6 +164,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
   .pin-inner { padding-top: 5.5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .curtain { display: none; }
+  .veil { display: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
   [data-slam] { opacity: 1; transform: none; }
 }

@@ -2,7 +2,7 @@
   "schema": 1,
   "project": "Late Apex site",
   "created": "2026-09-16T15:36:22.044Z",
-  "updated": "2026-09-16T16:11:53.425Z",
+  "updated": "2026-09-16T16:31:15.683Z",
   "phase": "Phase 2 — polish, real content, legal",
   "active": null,
   "tasks": [
@@ -141,16 +141,58 @@
     {
       "id": "T3",
       "title": "Motion cleanup: no jerks, soft page transitions, pass-by bloom",
-      "state": "TODO",
+      "state": "DONE",
       "deps": [
         "T1"
       ],
-      "attempts": 0,
-      "evidence": {},
+      "attempts": 1,
+      "evidence": {
+        "code": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T16:30:03.273Z",
+          "codeHash": "adfb633613871593c7b2c893a7c44b017ea29bbcdda82a845f23fd680448b921"
+        },
+        "runtime": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T16:30:04.471Z",
+          "codeHash": "adfb633613871593c7b2c893a7c44b017ea29bbcdda82a845f23fd680448b921"
+        },
+        "ui": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T16:31:15.273Z",
+          "codeHash": "adfb633613871593c7b2c893a7c44b017ea29bbcdda82a845f23fd680448b921",
+          "coverage": {
+            "routes": [
+              "/",
+              "/about.html",
+              "/contact.html",
+              "/pricing.html",
+              "/services.html",
+              "/work.html"
+            ],
+            "viewports": [
+              "mobile",
+              "desktop"
+            ],
+            "states": [
+              "default"
+            ],
+            "checks": 12,
+            "consoleErrors": 0,
+            "failedRequests": 0
+          }
+        }
+      },
       "notes": [],
-      "started": null,
-      "finished": null,
-      "blockedReason": null
+      "started": "2026-09-16T16:12:14.763Z",
+      "finished": "2026-09-16T16:31:15.681Z",
+      "blockedReason": null,
+      "base": "436a4a8d559d803a35fc5907f17a3712726024a7",
+      "recovery": {
+        "round": 0,
+        "failures": [],
+        "stop": null
+      }
     },
     {
       "id": "T4",
@@ -369,6 +411,36 @@
       "ts": "2026-09-16T16:11:53.425Z",
       "event": "done",
       "detail": "T2 (code:PASS)"
+    },
+    {
+      "ts": "2026-09-16T16:12:14.763Z",
+      "event": "start",
+      "detail": "T3 (attempt 1, checkpoint clean tree)"
+    },
+    {
+      "ts": "2026-09-16T16:27:39.391Z",
+      "event": "decision",
+      "detail": "Motion: reveal states only leave when fully off-screen; no scroll skew; no blur on reveals; native cross-document view transitions with an ink-fade fallback; loader only on the first page of a visit; pass-by ends in a feathered tail-light bloom."
+    },
+    {
+      "ts": "2026-09-16T16:30:03.308Z",
+      "event": "evidence",
+      "detail": "T3/code PASS"
+    },
+    {
+      "ts": "2026-09-16T16:30:04.496Z",
+      "event": "evidence",
+      "detail": "T3/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T16:31:15.299Z",
+      "event": "evidence",
+      "detail": "T3/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T16:31:15.683Z",
+      "event": "done",
+      "detail": "T3 (code:PASS ui:PASS)"
     }
   ]
 }
