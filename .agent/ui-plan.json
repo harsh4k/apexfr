@@ -1,0 +1,27 @@
+{
+  "generated": "2026-09-16T15:37:19.556Z",
+  "hasContract": false,
+  "baseUrl": null,
+  "start": null,
+  "required": {
+    "routes": [
+      "/"
+    ],
+    "viewports": [
+      "mobile",
+      "desktop"
+    ],
+    "states": [
+      "default"
+    ]
+  },
+  "flows": [],
+  "samples": {},
+  "needsSample": [],
+  "noConsoleErrors": true,
+  "noFailedRequests": true,
+  "allowRemote": false,
+  "why": [
+    "no route could be inferred — falling back to /"
+  ]
+}

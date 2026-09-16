@@ -13,3 +13,7 @@ playwright-report/
 *.zip
 site/frames/
 .env*
+.work/frames_new/
+.work/loopsrc/
+.work/tmp2_*/
+.agent/runs/

@@ -1,0 +1,280 @@
+{
+  "schema": 1,
+  "project": "Late Apex site",
+  "created": "2026-09-16T15:36:22.044Z",
+  "updated": "2026-09-16T16:04:39.800Z",
+  "phase": "Phase 2 — polish, real content, legal",
+  "active": null,
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Test harness: server, lint, Playwright smoke/layout/visual",
+      "state": "DONE",
+      "deps": [],
+      "attempts": 1,
+      "evidence": {
+        "code": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T16:04:38.201Z",
+          "codeHash": "6203ff71d590938a0a89a272aa9de15a4c8b2bdc350517a6e417651c9e7da56b"
+        },
+        "runtime": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T16:04:39.361Z",
+          "codeHash": "6203ff71d590938a0a89a272aa9de15a4c8b2bdc350517a6e417651c9e7da56b"
+        },
+        "ui": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T16:02:25.893Z",
+          "codeHash": "6203ff71d590938a0a89a272aa9de15a4c8b2bdc350517a6e417651c9e7da56b",
+          "coverage": {
+            "routes": [
+              "/",
+              "/about.html",
+              "/contact.html",
+              "/pricing.html",
+              "/services.html",
+              "/work.html"
+            ],
+            "viewports": [
+              "mobile",
+              "desktop"
+            ],
+            "states": [
+              "default"
+            ],
+            "checks": 12,
+            "consoleErrors": 0,
+            "failedRequests": 0
+          }
+        }
+      },
+      "notes": [],
+      "started": "2026-09-16T15:37:19.592Z",
+      "finished": "2026-09-16T16:04:39.798Z",
+      "blockedReason": null,
+      "base": "104452f832ce6152fe935c88fb770f7c6d40b0c8",
+      "recovery": {
+        "round": 0,
+        "failures": [],
+        "stop": null
+      }
+    },
+    {
+      "id": "T2",
+      "title": "Director v2: interpolated frames, sub-frame blend, push-through transitions",
+      "state": "TODO",
+      "deps": [
+        "T1"
+      ],
+      "attempts": 0,
+      "evidence": {},
+      "notes": [],
+      "started": null,
+      "finished": null,
+      "blockedReason": null
+    },
+    {
+      "id": "T3",
+      "title": "Motion cleanup: no jerks, soft page transitions, pass-by bloom",
+      "state": "TODO",
+      "deps": [
+        "T1"
+      ],
+      "attempts": 0,
+      "evidence": {},
+      "notes": [],
+      "started": null,
+      "finished": null,
+      "blockedReason": null
+    },
+    {
+      "id": "T4",
+      "title": "Brand: new name, SVG logo, favicon, de-slop",
+      "state": "TODO",
+      "deps": [
+        "T1"
+      ],
+      "attempts": 0,
+      "evidence": {},
+      "notes": [],
+      "started": null,
+      "finished": null,
+      "blockedReason": null
+    },
+    {
+      "id": "T5",
+      "title": "UI glitches: hero clipping, responsive type, overlaps",
+      "state": "WAITING",
+      "deps": [
+        "T3",
+        "T4"
+      ],
+      "attempts": 0,
+      "evidence": {},
+      "notes": [],
+      "started": null,
+      "finished": null,
+      "blockedReason": null
+    },
+    {
+      "id": "T6",
+      "title": "Real work + profile data",
+      "state": "WAITING",
+      "deps": [
+        "T4"
+      ],
+      "attempts": 0,
+      "evidence": {},
+      "notes": [],
+      "started": null,
+      "finished": null,
+      "blockedReason": null
+    },
+    {
+      "id": "T7",
+      "title": "Pricing: complexity x pages model + estimator",
+      "state": "WAITING",
+      "deps": [
+        "T4"
+      ],
+      "attempts": 0,
+      "evidence": {},
+      "notes": [],
+      "started": null,
+      "finished": null,
+      "blockedReason": null
+    },
+    {
+      "id": "T8",
+      "title": "Legal pages: privacy, terms, refunds, licence",
+      "state": "WAITING",
+      "deps": [
+        "T4"
+      ],
+      "attempts": 0,
+      "evidence": {},
+      "notes": [],
+      "started": null,
+      "finished": null,
+      "blockedReason": null
+    },
+    {
+      "id": "T9",
+      "title": "Full visual pass and fixes",
+      "state": "WAITING",
+      "deps": [
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T7",
+        "T8"
+      ],
+      "attempts": 0,
+      "evidence": {},
+      "notes": [],
+      "started": null,
+      "finished": null,
+      "blockedReason": null
+    }
+  ],
+  "log": [
+    {
+      "ts": "2026-09-16T15:36:22.044Z",
+      "event": "init",
+      "detail": "Late Apex site"
+    },
+    {
+      "ts": "2026-09-16T15:36:40.268Z",
+      "event": "add",
+      "detail": "T1 Test harness: server, lint, Playwright smoke/layout/visual"
+    },
+    {
+      "ts": "2026-09-16T15:36:40.387Z",
+      "event": "add",
+      "detail": "T2 Director v2: interpolated frames, sub-frame blend, push-through transitions"
+    },
+    {
+      "ts": "2026-09-16T15:36:40.491Z",
+      "event": "add",
+      "detail": "T3 Motion cleanup: no jerks, soft page transitions, pass-by bloom"
+    },
+    {
+      "ts": "2026-09-16T15:36:40.609Z",
+      "event": "add",
+      "detail": "T4 Brand: new name, SVG logo, favicon, de-slop"
+    },
+    {
+      "ts": "2026-09-16T15:36:40.739Z",
+      "event": "add",
+      "detail": "T5 UI glitches: hero clipping, responsive type, overlaps"
+    },
+    {
+      "ts": "2026-09-16T15:36:40.871Z",
+      "event": "add",
+      "detail": "T6 Real work + profile data"
+    },
+    {
+      "ts": "2026-09-16T15:36:40.987Z",
+      "event": "add",
+      "detail": "T7 Pricing: complexity x pages model + estimator"
+    },
+    {
+      "ts": "2026-09-16T15:36:41.110Z",
+      "event": "add",
+      "detail": "T8 Legal pages: privacy, terms, refunds, licence"
+    },
+    {
+      "ts": "2026-09-16T15:36:41.232Z",
+      "event": "add",
+      "detail": "T9 Full visual pass and fixes"
+    },
+    {
+      "ts": "2026-09-16T15:36:41.360Z",
+      "event": "decision",
+      "detail": "Studio renamed to Late Apex"
+    },
+    {
+      "ts": "2026-09-16T15:36:41.520Z",
+      "event": "decision",
+      "detail": "site/frames and source videos are git-ignored"
+    },
+    {
+      "ts": "2026-09-16T15:37:19.592Z",
+      "event": "start",
+      "detail": "T1 (attempt 1, checkpoint 2026-09-16T15-37-19-354)"
+    },
+    {
+      "ts": "2026-09-16T16:01:00.428Z",
+      "event": "evidence",
+      "detail": "T1/code PASS"
+    },
+    {
+      "ts": "2026-09-16T16:01:08.099Z",
+      "event": "evidence",
+      "detail": "T1/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T16:02:25.917Z",
+      "event": "evidence",
+      "detail": "T1/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T16:04:38.226Z",
+      "event": "evidence",
+      "detail": "T1/code PASS"
+    },
+    {
+      "ts": "2026-09-16T16:04:39.387Z",
+      "event": "evidence",
+      "detail": "T1/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T16:04:39.800Z",
+      "event": "done",
+      "detail": "T1 (code:PASS ui:PASS runtime:PASS)"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+sh01 245 2560x1440
+sh02 245 2560x1440
+sh03 245 2560x1440
+sh04 245 2560x1440
+sh05 245 2560x1440
+./ingest2.sh: line 16:  9009 Segmentation fault         ffmpeg -v error -y -i "$src" -vf "hqdn3d=1.2:1.2:2:2,$MI" -start_number 1 "$tmp/f%03d.png"
+./ingest2.sh: line 16:  9080 Segmentation fault         ffmpeg -v error -y -i "$src" -vf "hqdn3d=1.2:1.2:2:2,$MI" -start_number 1 "$tmp/f%03d.png"
+sh06 245 2560x1440
+sh07 245 2560x1440
+loop 335 2560x1440

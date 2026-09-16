@@ -1,0 +1,11 @@
+{
+  "verdict": "PASS",
+  "detail": "serve started on 5173, / answered 200",
+  "url": "http://127.0.0.1:5173/",
+  "status": 200,
+  "port": 5173,
+  "script": "serve",
+  "producer": "runtime-verify.mjs",
+  "codeHash": "6203ff71d590938a0a89a272aa9de15a4c8b2bdc350517a6e417651c9e7da56b",
+  "finishedAt": "2026-09-16T16:04:39.019Z"
+}
