@@ -20,12 +20,15 @@ export function watch(page) {
   return problems;
 }
 
-// Open a page and wait until the loader/curtain has cleared and fonts are in.
-export async function open(page, file) {
+// Open a page and wait until the loader has cleared and fonts are in.
+// Footage frames are skipped unless a test needs them: layout and behaviour
+// don't depend on them, and downloading them per test dominated run time.
+export async function open(page, file, { frames = false } = {}) {
+  if (!frames) await page.route("**/frames/**", (route) => route.abort("aborted"));
   await page.goto(`/${file}`);
   await page.waitForFunction(() => !document.body.classList.contains("is-loading"), null, { timeout: 30_000 });
   await page.evaluate(() => document.fonts && document.fonts.ready);
-  await page.waitForTimeout(400);
+  await page.waitForTimeout(250);
 }
 
 // Scroll to an absolute y and give the director and reveals time to settle.

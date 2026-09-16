@@ -28,7 +28,8 @@ async function canvasSignatureSeries(page, frames, stepPx) {
 }
 
 test("background is painted, not blank", async ({ page }) => {
-  await open(page, "index.html");
+  await open(page, "index.html", { frames: true });
+  await page.waitForSelector('html[data-frames="ready"]', { timeout: 45_000 });
   const lit = await page.evaluate(() => {
     const c = document.getElementById("stage");
     const p = document.createElement("canvas");
@@ -45,8 +46,8 @@ test("background is painted, not blank", async ({ page }) => {
 
 for (const file of ["index.html", "services.html"]) {
   test(`scrubbing ${file} changes the picture on most frames`, async ({ page }, info) => {
-    test.skip(info.project.name === "mobile", "touch scrolling is covered on desktop sizes");
-    await open(page, file);
+    test.skip(Boolean(info.project.use.isMobile), "touch scrolling is covered on desktop sizes");
+    await open(page, file, { frames: true });
     // wait for the first chapter's frames, then a little for the rest
     await page.waitForSelector('html[data-frames="ready"]', { timeout: 45_000 });
     await page.waitForTimeout(1500);

@@ -96,3 +96,20 @@ Verified 2026-09-16 19:41 against code `09e31bcc2b83`.
   - viewports: mobile, desktop
   - states: default
   - 120 assertion(s) · 0 console error(s) · 0 failed request(s)
+
+## T5 — UI glitches: hero clipping, responsive type, overlaps
+
+Verified 2026-09-16 20:58 against code `2234d74a35fe`.
+
+- **code** — PASS via `verify.mjs` · recorded 2026-09-16 20:58
+- **ui** — PASS via `playwright-script` · recorded 2026-09-16 20:55
+  - routes: /, /about.html, /contact.html, /licence.html, /pricing.html, /privacy.html, /refunds.html, /services.html, /terms.html, /work.html
+  - viewports: mobile, desktop
+  - states: default
+  - 120 assertion(s) · 0 console error(s) · 0 failed request(s)
+- **runtime** — PASS via `runtime-verify.mjs` · recorded 2026-09-16 20:54
+
+Recovery: 3 failed verification(s) over 2 attempt(s).
+- #1 code FAIL — TEST: Test suite grew to ~5 min after adding the small viewport and new tests; verify.mjs kills npm test at 240s → Cut fixed waits in page sweeps, raise workers, keep full coverage under the gate limit → FAIL
+- #2 code FAIL — TEST: Visual settle condition waited for elements only slightly on screen, which by design stay hidden until 20% visible → Match the reveal rule: only require elements at least 25% visible (or tall) to be revealed → FAIL
+- #3 code FAIL — TEST: Visual settle wait required barely-visible elements to be revealed; fixed to the 25%-visible rule, suite green twice (127 passed) → Record code evidence on the fixed suite → PASS

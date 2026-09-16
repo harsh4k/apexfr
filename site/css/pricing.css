@@ -3,7 +3,7 @@
 .price-lede { margin-top: 1.5rem; max-width: 40rem; }
 .price-note { margin: 0; font-size: .75rem; color: var(--paper-faint); }
 
-.toggle { display: inline-flex; padding: 4px; border: 1px solid var(--line-strong); border-radius: 99px; background: var(--glass); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.toggle { display: inline-grid; grid-template-columns: 1fr 1fr; padding: 4px; border: 1px solid var(--line-strong); border-radius: 99px; background: var(--glass); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 .toggle button { border: 0; background: none; padding: .6rem 1.1rem; border-radius: 99px; font-family: var(--f-mono); font-size: .78rem; cursor: pointer; color: var(--paper-dim); transition: color .35s; }
 .toggle button.is-on { color: var(--ink); }
 

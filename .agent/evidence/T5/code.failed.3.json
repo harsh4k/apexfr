@@ -1,0 +1,80 @@
+{
+  "task": "T5",
+  "class": "code",
+  "verdict": "FAIL",
+  "recorded": "2026-09-16T20:43:25.681Z",
+  "codeHash": "2234d74a35fe1d456dda1e4c9196e42630183fd13fdf4ebf15c09a2419b1e28e",
+  "head": "15f083b",
+  "tool": "verify.mjs",
+  "detail": {
+    "verdict": "FAIL",
+    "kind": "node",
+    "root": "X:\\Projects\\Websites\\Webci",
+    "producer": "verify.mjs",
+    "codeHash": "2234d74a35fe1d456dda1e4c9196e42630183fd13fdf4ebf15c09a2419b1e28e",
+    "finishedAt": "2026-09-16T20:43:25.522Z",
+    "checks": [
+      {
+        "name": "lint",
+        "status": "PASS",
+        "detail": "",
+        "output": "",
+        "run": {
+          "command": "npm",
+          "args": [
+            "run",
+            "lint"
+          ],
+          "termination": "exit",
+          "exitCode": 0,
+          "durationMs": 772,
+          "timedOut": false,
+          "treeKilled": false,
+          "outputHeldOpen": false,
+          "shell": false,
+          "error": null
+        }
+      },
+      {
+        "name": "types",
+        "status": "SKIP",
+        "detail": "no tsconfig",
+        "output": ""
+      },
+      {
+        "name": "build",
+        "status": "SKIP",
+        "detail": "no build script",
+        "output": ""
+      },
+      {
+        "name": "test",
+        "status": "FAIL",
+        "detail": "exit 1",
+        "output": "      33 | }\n      34 |\n        at X:\\Projects\\Websites\\Webci\\tests\\visual.spec.js:31:5\n    attachment #1: contact-top (image/png) ─────────────────────────────────────────────────────────\n    Expected: tests\\__screens__\\tablet\\visual.spec.js\\contact-top.png\n    Received: test-results\\visual-contact-—-first-screen-tablet\\contact-top-actual.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n    Error Context: test-results\\visual-contact-—-first-screen-tablet\\error-context.md\n    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results\\visual-contact-—-first-screen-tablet\\trace.zip\n    Usage:\n        npx playwright show-trace test-results\\visual-contact-—-first-screen-tablet\\trace.zip\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n  4) [small] › tests\\visual.spec.js:26:3 › pricing — first screen ──────────────────────────────────\n    Error: A snapshot doesn't exist at X:\\Projects\\Websites\\Webci\\tests\\__screens__\\small\\visual.spec.js\\pricing-top.png, writing actual.\n      29 |     await settled(page);\n      30 |     await page.waitForTimeout(300);\n    > 31 |     await expect(page).toHaveScreenshot(`${name}-top.png`, { mask: masks(page) });\n         |     ^\n      32 |   });\n      33 | }\n      34 |\n        at X:\\Projects\\Websites\\Webci\\tests\\visual.spec.js:31:5\n    attachment #1: pricing-top (image/png) ─────────────────────────────────────────────────────────\n    Expected: tests\\__screens__\\small\\visual.spec.js\\pricing-top.png\n    Received: test-results\\visual-pricing-—-first-screen-small\\pricing-top-actual.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n    Error Context: test-results\\visual-pricing-—-first-screen-small\\error-context.md\n    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results\\visual-pricing-—-first-screen-small\\trace.zip\n    Usage:\n        npx playwright show-trace test-results\\visual-pricing-—-first-screen-small\\trace.zip\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n  4 failed\n    [desktop] › tests\\motion.spec.js:48:3 › scrubbing index.html changes the picture on most frames \n    [laptop] › tests\\visual.spec.js:26:3 › pricing — first screen ──────────────────────────────────\n    [tablet] › tests\\visual.spec.js:26:3 › contact — first screen ──────────────────────────────────\n    [small] › tests\\visual.spec.js:26:3 › pricing — first screen ───────────────────────────────────\n  1 skipped\n  123 passed (2.0m)",
+        "run": {
+          "command": "npm",
+          "args": [
+            "run",
+            "test"
+          ],
+          "termination": "exit",
+          "exitCode": 1,
+          "durationMs": 121305,
+          "timedOut": false,
+          "treeKilled": false,
+          "outputHeldOpen": false,
+          "shell": false,
+          "error": null
+        }
+      }
+    ]
+  },
+  "classification": {
+    "category": "TEST",
+    "rule": "context:code/test",
+    "confidence": "context",
+    "check": "test",
+    "signals": []
+  }
+}

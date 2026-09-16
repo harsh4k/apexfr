@@ -1,0 +1,87 @@
+{
+  "task": "T5",
+  "class": "code",
+  "verdict": "FAIL",
+  "recorded": "2026-09-16T19:55:21.791Z",
+  "codeHash": "8883a68b1c87e6e381128dc7e9c14b912b896ba0c0a0d414a8e56a99af3de251",
+  "head": "15f083b",
+  "tool": "verify.mjs",
+  "detail": {
+    "verdict": "FAIL",
+    "kind": "node",
+    "root": "X:\\Projects\\Websites\\Webci",
+    "producer": "verify.mjs",
+    "codeHash": "8883a68b1c87e6e381128dc7e9c14b912b896ba0c0a0d414a8e56a99af3de251",
+    "finishedAt": "2026-09-16T19:55:21.595Z",
+    "checks": [
+      {
+        "name": "lint",
+        "status": "PASS",
+        "detail": "",
+        "output": "",
+        "run": {
+          "command": "npm",
+          "args": [
+            "run",
+            "lint"
+          ],
+          "termination": "exit",
+          "exitCode": 0,
+          "durationMs": 777,
+          "timedOut": false,
+          "treeKilled": false,
+          "outputHeldOpen": false,
+          "shell": false,
+          "error": null
+        }
+      },
+      {
+        "name": "types",
+        "status": "SKIP",
+        "detail": "no tsconfig",
+        "output": ""
+      },
+      {
+        "name": "build",
+        "status": "SKIP",
+        "detail": "no build script",
+        "output": ""
+      },
+      {
+        "name": "test",
+        "status": "FAIL",
+        "detail": "timed out after 240s (process tree killed)",
+        "output": "  ok 235 [mobile] › tests\\pages.spec.js:36:5 › privacy › headline starts fully on the first screen, clear of the nav (2.6s)\n  ok 236 [mobile] › tests\\pages.spec.js:50:5 › privacy › internal links resolve (1.6s)\n  ok 230 [mobile] › tests\\pages.spec.js:24:5 › pricing › no clipped headings or sideways scroll at any depth (8.2s)\n  ok 237 [mobile] › tests\\pages.spec.js:10:5 › refunds › loads without errors and has sound structure (2.4s)\n  ok 239 [mobile] › tests\\pages.spec.js:36:5 › refunds › headline starts fully on the first screen, clear of the nav (2.4s)\n  ok 240 [mobile] › tests\\pages.spec.js:50:5 › refunds › internal links resolve (1.2s)\n  ok 234 [mobile] › tests\\pages.spec.js:24:5 › privacy › no clipped headings or sideways scroll at any depth (7.6s)\n  ok 241 [mobile] › tests\\pages.spec.js:10:5 › services › loads without errors and has sound structure (2.2s)\n  ok 244 [mobile] › tests\\pages.spec.js:50:5 › services › internal links resolve (1.4s)\n  ok 243 [mobile] › tests\\pages.spec.js:36:5 › services › headline starts fully on the first screen, clear of the nav (2.9s)\n  ok 238 [mobile] › tests\\pages.spec.js:24:5 › refunds › no clipped headings or sideways scroll at any depth (7.6s)\n  ok 245 [mobile] › tests\\pages.spec.js:10:5 › terms › loads without errors and has sound structure (2.2s)\n  ok 248 [mobile] › tests\\pages.spec.js:50:5 › terms › internal links resolve (1.4s)\n  ok 247 [mobile] › tests\\pages.spec.js:36:5 › terms › headline starts fully on the first screen, clear of the nav (2.5s)\n  ok 242 [mobile] › tests\\pages.spec.js:24:5 › services › no clipped headings or sideways scroll at any depth (7.5s)\n  ok 249 [mobile] › tests\\pages.spec.js:10:5 › work › loads without errors and has sound structure (2.2s)\n  ok 251 [mobile] › tests\\pages.spec.js:36:5 › work › headline starts fully on the first screen, clear of the nav (2.7s)\n  ok 252 [mobile] › tests\\pages.spec.js:50:5 › work › internal links resolve (1.5s)\n  ok 246 [mobile] › tests\\pages.spec.js:24:5 › terms › no clipped headings or sideways scroll at any depth (7.4s)\n  ok 253 [mobile] › tests\\pages.spec.js:64:1 › home hero headline sits fully inside the first screen (3.5s)\n  ok 254 [mobile] › tests\\visual.spec.js:15:3 › about — first screen (3.6s)\n  ok 250 [mobile] › tests\\pages.spec.js:24:5 › work › no clipped headings or sideways scroll at any depth (7.4s)\n  ok 255 [mobile] › tests\\visual.spec.js:15:3 › contact — first screen (3.8s)\n  ok 257 [mobile] › tests\\visual.spec.js:15:3 › licence — first screen (3.6s)\n  ok 258 [mobile] › tests\\visual.spec.js:15:3 › pricing — first screen (3.6s)\n  ok 259 [mobile] › tests\\visual.spec.js:15:3 › privacy — first screen (3.5s)\n  ok 256 [mobile] › tests\\visual.spec.js:15:3 › index — first screen (4.4s)\n  ok 260 [mobile] › tests\\visual.spec.js:15:3 › refunds — first screen (3.4s)\n  ok 262 [mobile] › tests\\visual.spec.js:15:3 › terms — first screen (3.6s)\n  ok 261 [mobile] › tests\\visual.spec.js:15:3 › services — first screen (3.7s)\n  ok 263 [mobile] › tests\\visual.spec.js:15:3 › work — first screen (3.8s)\n  ok 265 [small] › tests\\interactions.spec.js:5:1 › currency switch repaints every price from the rate card (1.5s)\n  ok 264 [mobile] › tests\\visual.spec.js:23:1 › footer (4.2s)\n  ok 267 [small] › tests\\interactions.spec.js:35:1 › project brief validates, then confirms (2.8s)\n  -  269 [small] › tests\\legal.spec.js:10:3 › privacy: contents links resolve and placeholders are known\n  ok 266 [small] › tests\\interactions.spec.js:17:1 › estimator adds pages, extras and rush correctly (3.4s)\n  -  270 [small] › tests\\legal.spec.js:10:3 › terms: contents links resolve and placeholders are known\n  -  271 [small] › tests\\legal.spec.js:10:3 › refunds: contents links resolve and placeholders are known\n  -  272 [small] › tests\\legal.spec.js:10:3 › licence: contents links resolve and placeholders are known\n  -  273 [small] › tests\\legal.spec.js:24:1 › unknown URLs get the branded 404 page",
+        "run": {
+          "command": "npm",
+          "args": [
+            "run",
+            "test"
+          ],
+          "termination": "timeout",
+          "exitCode": 1,
+          "durationMs": 240423,
+          "timedOut": true,
+          "treeKilled": true,
+          "outputHeldOpen": false,
+          "shell": false,
+          "error": null
+        }
+      }
+    ]
+  },
+  "classification": {
+    "category": "TEST",
+    "rule": "context:code/test",
+    "confidence": "context",
+    "check": "test",
+    "signals": [
+      {
+        "rule": "timeout",
+        "category": null,
+        "match": "timed out after 240423 ms",
+        "check": "test"
+      }
+    ]
+  }
+}

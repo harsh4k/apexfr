@@ -1,0 +1,1118 @@
+{
+  "task": "T5",
+  "class": "ui",
+  "verdict": "PASS",
+  "recorded": "2026-09-16T20:55:52.900Z",
+  "codeHash": "2234d74a35fe1d456dda1e4c9196e42630183fd13fdf4ebf15c09a2419b1e28e",
+  "head": "15f083b",
+  "tool": "playwright-script",
+  "detail": {
+    "verdict": "PASS",
+    "producer": "playwright-script",
+    "baseUrl": "http://127.0.0.1:4190",
+    "startedAt": "2026-09-16T20:54:05.379Z",
+    "finishedAt": "2026-09-16T20:55:52.494Z",
+    "checks": [
+      {
+        "route": "/",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Late Apex — Websites and web apps by Harshit Chauhan",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\home-mobile-default.png",
+        "screenshotSha256": "53d807304b04eb120fa936d1e8419197b56385299ce9a4d37f1e1f9b12e524b2"
+      },
+      {
+        "route": "/",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Late Apex — Websites and web apps by Harshit Chauhan",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\home-desktop-default.png",
+        "screenshotSha256": "96047f036699953a8f0b581364efb2a951f27c5b72b87bd726c0f56d161ee9c4"
+      },
+      {
+        "route": "/about.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "About — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\about-html-mobile-default.png",
+        "screenshotSha256": "6e0b099cfb62c20d80792efdc6ffdec3281737a1df8ae206fa49281b0f89f9c3"
+      },
+      {
+        "route": "/about.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "About — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\about-html-desktop-default.png",
+        "screenshotSha256": "64c34b0b1216cc517ef92148625c90184ec9663c4ed31a416c1ee0fab2436b5e"
+      },
+      {
+        "route": "/contact.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Contact — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\contact-html-mobile-default.png",
+        "screenshotSha256": "fe2c37eef22f6b4b118a70d8c482a642643dd712072e7da82509a66f954aa8cb"
+      },
+      {
+        "route": "/contact.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Contact — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\contact-html-desktop-default.png",
+        "screenshotSha256": "1658fe7e0df4e65cbb50351735d8fe5c26121f813f2d66c2f98582e338197029"
+      },
+      {
+        "route": "/licence.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Software Licence — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\licence-html-mobile-default.png",
+        "screenshotSha256": "565a4841d26a1504ed16f40f901f344f5c30d0866c393f31363f97f475be0669"
+      },
+      {
+        "route": "/licence.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Software Licence — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\licence-html-desktop-default.png",
+        "screenshotSha256": "9bb177763855b679a4b3fd9afc49c085f422355745e812abf2a8452c100a9080"
+      },
+      {
+        "route": "/pricing.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Pricing — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\pricing-html-mobile-default.png",
+        "screenshotSha256": "aae2c246c52b9e844f6dcfa7468dcceabfd2ae4d0a9c3f8250e1b81b724c6062"
+      },
+      {
+        "route": "/pricing.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Pricing — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\pricing-html-desktop-default.png",
+        "screenshotSha256": "4aea3368a4761d89d52d8d031004f81fe48cfec2ca898f3f49b64f648d5efb24"
+      },
+      {
+        "route": "/privacy.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Privacy Policy — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\privacy-html-mobile-default.png",
+        "screenshotSha256": "6cf326a6060b56b280aafa05bb4c481a5bb3000beef55cab2d65a9b242329b9a"
+      },
+      {
+        "route": "/privacy.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Privacy Policy — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\privacy-html-desktop-default.png",
+        "screenshotSha256": "21856b877c3781fb4098c9f5df4f3fbcd9547570456cc09882bb0f743ed246f6"
+      },
+      {
+        "route": "/refunds.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Refund & Cancellation Policy — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\refunds-html-mobile-default.png",
+        "screenshotSha256": "418cc2d9990e9ffee61652932dedd7428c6f0ff1dc63eb1fc17310bc14d34168"
+      },
+      {
+        "route": "/refunds.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Refund & Cancellation Policy — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\refunds-html-desktop-default.png",
+        "screenshotSha256": "6fb5b01451fdef5aef228405940d32ecbf3c17e5c65ae6efca4382905fa65fab"
+      },
+      {
+        "route": "/services.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Services — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\services-html-mobile-default.png",
+        "screenshotSha256": "c61f7c11c95cc2f303e9692fd11a87883b3c0c703086e2e93edc7a0884c48d27"
+      },
+      {
+        "route": "/services.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Services — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\services-html-desktop-default.png",
+        "screenshotSha256": "ce9da01e9a7de64c063cd808138875177334b8529e14bfc36f0bdbd938e5ad62"
+      },
+      {
+        "route": "/terms.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Terms of Service — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\terms-html-mobile-default.png",
+        "screenshotSha256": "e4aab782e9462fd602f1b02601e33feb805b24520663dedc282cb06928e9840f"
+      },
+      {
+        "route": "/terms.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Terms of Service — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\terms-html-desktop-default.png",
+        "screenshotSha256": "1eb4275b8c516252ad5825cddb7152c88d8eb69dd65dd4c8624a63d1b16e209f"
+      },
+      {
+        "route": "/work.html",
+        "viewport": "mobile",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Work — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 375,
+              "scrollWidth": 375
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\work-html-mobile-default.png",
+        "screenshotSha256": "d2435e9183dec695fc85c3158ab22efb6fa7f3654c8f71348eebf3fc2c8e673b"
+      },
+      {
+        "route": "/work.html",
+        "viewport": "desktop",
+        "state": "default",
+        "settled": "networkidle",
+        "consoleErrors": [],
+        "failedRequests": [],
+        "assertions": [
+          {
+            "kind": "custom",
+            "target": "document status",
+            "expect": 200,
+            "actual": 200,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "h1",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "text",
+            "target": "title",
+            "expect": "non-empty",
+            "actual": "Work — Late Apex",
+            "ok": true
+          },
+          {
+            "kind": "visible",
+            "target": "#nav",
+            "expect": true,
+            "actual": true,
+            "ok": true
+          },
+          {
+            "kind": "count",
+            "target": "meta[name=\"viewport\"]",
+            "expect": 1,
+            "actual": 1,
+            "ok": true
+          },
+          {
+            "kind": "noOverflow",
+            "actual": {
+              "clientWidth": 1440,
+              "scrollWidth": 1440
+            },
+            "ok": true
+          }
+        ],
+        "screenshot": "shots\\work-html-desktop-default.png",
+        "screenshotSha256": "c257511622d73eab257a702dbd4a8913d5ed14f24bf6eb3a4cd93847dceee657"
+      }
+    ]
+  }
+}

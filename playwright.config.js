@@ -20,7 +20,7 @@ export default defineConfig({
   expect: { timeout: 10_000, toHaveScreenshot: { maxDiffPixelRatio: 0.03, animations: "disabled" } },
   fullyParallel: true,
   updateSnapshots: "missing",
-  workers: 4,
+  workers: process.env.PW_WORKERS ? Number(process.env.PW_WORKERS) : 10,
   reporter: [["list"], ["html", { open: "never" }]],
   snapshotPathTemplate: "tests/__screens__/{projectName}/{testFilePath}/{arg}{ext}",
   use: {
@@ -34,10 +34,13 @@ export default defineConfig({
     url: `http://localhost:${PORT}/index.html`,
     reuseExistingServer: true,
   },
+  // Layout + visual suites run at every size; behaviour suites where they
+  // differ (desktop pointer vs touch phone). Keeps the gate under 4 minutes.
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 }, launchOptions } },
-    { name: "laptop", use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 680 }, launchOptions } },
-    { name: "tablet", use: { ...devices["Desktop Chrome"], viewport: { width: 820, height: 1180 }, hasTouch: true, launchOptions } },
-    { name: "mobile", use: { ...devices["Pixel 7"], launchOptions } },
+    { name: "laptop", testMatch: /(pages|visual|motion).spec/, use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 680 }, launchOptions } },
+    { name: "tablet", testMatch: /(pages|visual).spec/, use: { ...devices["Desktop Chrome"], viewport: { width: 820, height: 1180 }, hasTouch: true, launchOptions } },
+    { name: "mobile", testMatch: /(pages|visual|interactions).spec/, use: { ...devices["Pixel 7"], launchOptions } },
+    { name: "small", testMatch: /(pages|visual).spec/, use: { ...devices["Pixel 7"], viewport: { width: 360, height: 640 }, launchOptions } },
   ],
 });

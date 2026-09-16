@@ -9,8 +9,8 @@
   display: flex; flex-direction: column; justify-content: center; overflow: hidden;
 }
 .page-hero { min-height: 78vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 9rem var(--gutter) 4rem; }
-.page-hero__index { color: var(--sodium); margin-bottom: 1.8rem; }
-.page-hero h1 { margin: 0; font: 900 clamp(3.4rem, min(13vw, 20vh), 12rem)/.86 var(--f-display); text-transform: uppercase; }
+.page-hero__index { display: block; color: var(--sodium); margin: 0 0 2.2rem; }
+.page-hero h1 { margin: 0; font: 900 clamp(3.2rem, min(12vw, 19vh), 11rem)/.92 var(--f-display); text-transform: uppercase; }
 .page-hero h1 em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
 .page-hero h1 em .w > i { color: transparent; }
 .page-hero p { max-width: 36rem; margin: 1.6rem 0 0; color: var(--paper-dim); font-size: 1.1rem; }
@@ -45,7 +45,8 @@
 .route:hover > i:not(.spot) { transform: translate(6px, -6px); }
 
 /* ---------- A: Orbit ---------- */
-.orbit__head { max-width: 40rem; }
+.orbit__head { max-width: 64rem; }
+.orbit__head .display--xl { font-size: clamp(2.8rem, min(7.5vw, 12vh), 7rem); }
 .orbit__deck { position: relative; margin-top: auto; width: min(100%, 34rem); min-height: 15rem; }
 .orbit__card {
   position: absolute; inset: auto 0 0 0; padding: 1.8rem; border-radius: var(--radius);
