@@ -1,0 +1,80 @@
+{
+  "task": "T6",
+  "class": "code",
+  "verdict": "FAIL",
+  "recorded": "2026-09-16T19:11:20.165Z",
+  "codeHash": "045b4099c983eea429506f17a6beb655560ef0b22d33050e99b1860b9c92af29",
+  "head": "449352b",
+  "tool": "verify.mjs",
+  "detail": {
+    "verdict": "FAIL",
+    "kind": "node",
+    "root": "X:\\Projects\\Websites\\Webci",
+    "producer": "verify.mjs",
+    "codeHash": "045b4099c983eea429506f17a6beb655560ef0b22d33050e99b1860b9c92af29",
+    "finishedAt": "2026-09-16T19:11:20.082Z",
+    "checks": [
+      {
+        "name": "lint",
+        "status": "PASS",
+        "detail": "",
+        "output": "",
+        "run": {
+          "command": "npm",
+          "args": [
+            "run",
+            "lint"
+          ],
+          "termination": "exit",
+          "exitCode": 0,
+          "durationMs": 643,
+          "timedOut": false,
+          "treeKilled": false,
+          "outputHeldOpen": false,
+          "shell": false,
+          "error": null
+        }
+      },
+      {
+        "name": "types",
+        "status": "SKIP",
+        "detail": "no tsconfig",
+        "output": ""
+      },
+      {
+        "name": "build",
+        "status": "SKIP",
+        "detail": "no build script",
+        "output": ""
+      },
+      {
+        "name": "test",
+        "status": "FAIL",
+        "detail": "exit 1",
+        "output": "      Snapshot: work-top.png\n    Call log:\n      - Expect \"toHaveScreenshot(work-top.png)\" with timeout 10000ms\n        - verifying given screenshot expectation\n      - taking page screenshot\n        - disabled all CSS animations\n      - waiting for fonts to load...\n      - fonts loaded\n      - 35624 pixels (ratio 0.11 of all image pixels) are different.\n      - waiting 100ms before taking screenshot\n      - taking page screenshot\n        - disabled all CSS animations\n      - waiting for fonts to load...\n      - fonts loaded\n      - captured a stable screenshot\n      - 35624 pixels (ratio 0.11 of all image pixels) are different.\n      17 |     await page.addStyleTag({ content: FREEZE });\n      18 |     await page.waitForTimeout(2200);\n    > 19 |     await expect(page).toHaveScreenshot(`${name}-top.png`, { mask: masks(page) });\n         |                        ^\n      20 |   });\n      21 | }\n      22 |\n        at X:\\Projects\\Websites\\Webci\\tests\\visual.spec.js:19:24\n    attachment #1: work-top (image/png) ────────────────────────────────────────────────────────────\n    Expected: tests\\__screens__\\mobile\\visual.spec.js\\work-top.png\n    Received: test-results\\visual-work-—-first-screen-mobile\\work-top-actual.png\n    Diff:     test-results\\visual-work-—-first-screen-mobile\\work-top-diff.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n    Error Context: test-results\\visual-work-—-first-screen-mobile\\error-context.md\n    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────\n    test-results\\visual-work-—-first-screen-mobile\\trace.zip\n    Usage:\n        npx playwright show-trace test-results\\visual-work-—-first-screen-mobile\\trace.zip\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n  2 failed\n    [tablet] › tests\\visual.spec.js:15:3 › work — first screen ─────────────────────────────────────\n    [mobile] › tests\\visual.spec.js:15:3 › work — first screen ─────────────────────────────────────\n  7 skipped\n  191 passed (3.4m)",
+        "run": {
+          "command": "npm",
+          "args": [
+            "run",
+            "test"
+          ],
+          "termination": "exit",
+          "exitCode": 1,
+          "durationMs": 202076,
+          "timedOut": false,
+          "treeKilled": false,
+          "outputHeldOpen": false,
+          "shell": false,
+          "error": null
+        }
+      }
+    ]
+  },
+  "classification": {
+    "category": "TEST",
+    "rule": "context:code/test",
+    "confidence": "context",
+    "check": "test",
+    "signals": []
+  }
+}

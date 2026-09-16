@@ -1,0 +1,20 @@
+{
+  "task": "T6",
+  "class": "runtime",
+  "verdict": "PASS",
+  "recorded": "2026-09-16T19:21:26.065Z",
+  "codeHash": "e4bb43fb6094e89c27225acf7912c97cd82be168ad0e563385da21d1c830b156",
+  "head": "449352b",
+  "tool": "runtime-verify.mjs",
+  "detail": {
+    "verdict": "PASS",
+    "detail": "serve started on 5173, / answered 200",
+    "url": "http://127.0.0.1:5173/",
+    "status": 200,
+    "port": 5173,
+    "script": "serve",
+    "producer": "runtime-verify.mjs",
+    "codeHash": "e4bb43fb6094e89c27225acf7912c97cd82be168ad0e563385da21d1c830b156",
+    "finishedAt": "2026-09-16T19:21:25.696Z"
+  }
+}

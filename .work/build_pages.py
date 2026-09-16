@@ -9,6 +9,9 @@ FAVICON = ("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 vie
            "%3Cpath d=%27M29 14 C36 13 41 23 44 32 S49 48 53 52%27 stroke=%27%23f2efe9%27 stroke-width=%277%27 stroke-linecap=%27round%27 fill=%27none%27/%3E"
            "%3Ccircle cx=%2743.6%27 cy=%2731%27 r=%275.5%27 fill=%27%23ff3347%27/%3E%3C/svg%3E")
 
+JSONLD = """
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Late Apex","description":"Independent web studio building websites and web apps.","founder":{"@type":"Person","name":"Harshit Chauhan","jobTitle":"Full-stack developer","sameAs":["https://github.com/harsh4k","https://www.linkedin.com/in/harshit-chauhan-17a898364/","https://harshh.pages.dev/"]},"address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressCountry":"IN"},"areaServed":"Worldwide"}</script>"""
+
 PAGES = {
   "index": ("Late Apex — Websites and web apps by Harshit Chauhan", "Late Apex is Harshit Chauhan's independent studio in Mumbai: fast, hand-built websites and web apps for clients in India and abroad, priced by pages and complexity."),
   "services": ("Services — Late Apex", "Websites, web apps, online stores and monthly care, built in a fixed two-week process."),
@@ -48,7 +51,7 @@ def shell(name, title, desc, body, extra_scripts=(), loader=False):
   <meta property="og:title" content="{html.escape(title)}" />
   <meta property="og:description" content="{html.escape(desc)}" />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="{FAVICON}" />
+  <link rel="icon" href="{FAVICON}" />{JSONLD if name == "index" else ""}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />

@@ -2,7 +2,7 @@
   "schema": 1,
   "project": "Late Apex site",
   "created": "2026-09-16T15:36:22.044Z",
-  "updated": "2026-09-16T19:04:27.979Z",
+  "updated": "2026-09-16T19:23:14.998Z",
   "phase": "Phase 2 — polish, real content, legal",
   "active": null,
   "tasks": [
@@ -277,16 +277,101 @@
     {
       "id": "T6",
       "title": "Real work + profile data",
-      "state": "TODO",
+      "state": "DONE",
       "deps": [
         "T4"
       ],
-      "attempts": 0,
-      "evidence": {},
-      "notes": [],
-      "started": null,
-      "finished": null,
-      "blockedReason": null
+      "attempts": 1,
+      "evidence": {
+        "code": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:21:24.458Z",
+          "codeHash": "e4bb43fb6094e89c27225acf7912c97cd82be168ad0e563385da21d1c830b156"
+        },
+        "runtime": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:21:26.065Z",
+          "codeHash": "e4bb43fb6094e89c27225acf7912c97cd82be168ad0e563385da21d1c830b156"
+        },
+        "ui": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:23:14.575Z",
+          "codeHash": "e4bb43fb6094e89c27225acf7912c97cd82be168ad0e563385da21d1c830b156",
+          "coverage": {
+            "routes": [
+              "/",
+              "/about.html",
+              "/contact.html",
+              "/licence.html",
+              "/pricing.html",
+              "/privacy.html",
+              "/refunds.html",
+              "/services.html",
+              "/terms.html",
+              "/work.html"
+            ],
+            "viewports": [
+              "mobile",
+              "desktop"
+            ],
+            "states": [
+              "default"
+            ],
+            "checks": 20,
+            "consoleErrors": 0,
+            "failedRequests": 0
+          }
+        }
+      },
+      "notes": [
+        {
+          "ts": "2026-09-16T19:07:57.180Z",
+          "text": "Work page descriptions of Synapical / Coffee Digital / Velsaro are written from the live sites and repo metadata; owner should confirm exact role and scope for each.",
+          "kind": "client"
+        }
+      ],
+      "started": "2026-09-16T19:06:11.803Z",
+      "finished": "2026-09-16T19:23:14.995Z",
+      "blockedReason": null,
+      "base": "449352bb6840324f54a22a3dce0514eefc698627",
+      "recovery": {
+        "round": 0,
+        "failures": [
+          {
+            "n": 1,
+            "round": 0,
+            "attempt": 1,
+            "class": "code",
+            "at": "2026-09-16T19:11:20.192Z",
+            "verdict": "FAIL",
+            "codeHash": "045b4099c983eea429506f17a6beb655560ef0b22d33050e99b1860b9c92af29",
+            "category": "TEST",
+            "auto": "TEST",
+            "rule": "context:code/test",
+            "signals": [],
+            "diagnosis": {
+              "cause": "Work page was intentionally redesigned; only the desktop visual baseline was refreshed, so tablet/mobile/laptop baselines were stale",
+              "action": "Refresh work-page baselines for all viewports and re-run the suite",
+              "category": "TEST",
+              "auto": "TEST",
+              "because": "snapshot baselines, not product behaviour",
+              "impact": "none",
+              "checkpoint": "2026-09-16T19-17-58-883",
+              "at": "2026-09-16T19:17:58.947Z"
+            },
+            "result": {
+              "verdict": "PASS",
+              "codeHash": "e4bb43fb6094e89c27225acf7912c97cd82be168ad0e563385da21d1c830b156",
+              "at": "2026-09-16T19:21:24.492Z",
+              "changedFiles": [
+                "tests/__screens__/mobile/visual.spec.js/work-top.png",
+                "tests/__screens__/tablet/visual.spec.js/work-top.png"
+              ]
+            }
+          }
+        ],
+        "stop": null
+      }
     },
     {
       "id": "T7",
@@ -522,6 +607,56 @@
       "ts": "2026-09-16T19:04:27.979Z",
       "event": "done",
       "detail": "T4 (code:PASS ui:PASS)"
+    },
+    {
+      "ts": "2026-09-16T19:06:11.803Z",
+      "event": "start",
+      "detail": "T6 (attempt 1, checkpoint clean tree)"
+    },
+    {
+      "ts": "2026-09-16T19:07:57.180Z",
+      "event": "note",
+      "detail": "T6 [client]: Work page descriptions of Synapical / Coffee Digital / Velsa"
+    },
+    {
+      "ts": "2026-09-16T19:11:20.193Z",
+      "event": "evidence",
+      "detail": "T6/code FAIL"
+    },
+    {
+      "ts": "2026-09-16T19:11:21.315Z",
+      "event": "evidence",
+      "detail": "T6/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T19:13:08.904Z",
+      "event": "evidence",
+      "detail": "T6/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T19:17:58.948Z",
+      "event": "diagnose",
+      "detail": "T6 failure #1 code: TEST"
+    },
+    {
+      "ts": "2026-09-16T19:21:24.493Z",
+      "event": "evidence",
+      "detail": "T6/code PASS"
+    },
+    {
+      "ts": "2026-09-16T19:21:26.089Z",
+      "event": "evidence",
+      "detail": "T6/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T19:23:14.602Z",
+      "event": "evidence",
+      "detail": "T6/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T19:23:14.998Z",
+      "event": "done",
+      "detail": "T6 (code:PASS ui:PASS)"
     }
   ]
 }

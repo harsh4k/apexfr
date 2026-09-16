@@ -97,7 +97,7 @@ window.Interact = (function () {
 
   // ---- Spotlight + tilt on glass cards ----
   function spotlight() {
-    document.querySelectorAll(".tier, .lap, .lamp, .ledger, .cost, .footer__clock, .stat, .route, .side-card, .brief").forEach((el) => {
+    document.querySelectorAll(".tier, .lap, .lamp, .ledger, .cost, .footer__clock, .stat, .route, .side-card, .brief, .repo").forEach((el) => {
       el.dataset.spot = "";
       const glow = document.createElement("i");
       glow.className = "spot";

@@ -24,3 +24,7 @@ _2026-09-16 16:31_ · code:PASS ui:PASS · code `adfb63361387`
 ## T4 — Brand: new name, SVG logo, favicon, de-slop
 
 _2026-09-16 19:04_ · code:PASS ui:PASS · code `54ff6915811d`
+
+## T6 — Real work + profile data
+
+_2026-09-16 19:23_ · code:PASS ui:PASS · code `e4bb43fb6094`

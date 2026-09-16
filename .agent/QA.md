@@ -60,3 +60,17 @@ Verified 2026-09-16 19:04 against code `54ff6915811d`.
   - viewports: mobile, desktop
   - states: default
   - 120 assertion(s) · 0 console error(s) · 0 failed request(s)
+
+## T6 — Real work + profile data
+
+Verified 2026-09-16 19:23 against code `e4bb43fb6094`.
+
+- **code** — PASS via `verify.mjs` · recorded 2026-09-16 19:21
+- **ui** — PASS via `playwright-script` · recorded 2026-09-16 19:23
+  - routes: /, /about.html, /contact.html, /licence.html, /pricing.html, /privacy.html, /refunds.html, /services.html, /terms.html, /work.html
+  - viewports: mobile, desktop
+  - states: default
+  - 120 assertion(s) · 0 console error(s) · 0 failed request(s)
+
+Recovery: 1 failed verification(s) over 1 attempt(s).
+- #1 code FAIL — TEST: Work page was intentionally redesigned; only the desktop visual baseline was refreshed, so tablet/mobile/laptop baselines were stale → Refresh work-page baselines for all viewports and re-run the suite → PASS

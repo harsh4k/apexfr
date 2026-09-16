@@ -1,40 +1,76 @@
     <!-- Original clip: page opener -->
-    <section class="chapter page-hero page-hero--right" id="work-hero" data-chapter data-shot="loop" data-mode="loop" data-label="LOOP">
-      <p class="page-hero__index mono" data-scramble>02 / Work</p>
-      <h1 aria-label="Selected work"><span data-split="chars">Selected</span> <em data-split="chars">work</em></h1>
-      <p data-reveal>A few recent launches and the numbers they moved. The three below are sample projects that show the format; real case studies replace them before launch.</p>
+    <section class="chapter page-hero page-hero--right" id="work-hero" data-chapter data-shot="loop" data-mode="loop" data-label="Work">
+      <p class="page-hero__index mono">Work</p>
+      <h1 aria-label="Selected work"><span data-split="chars">Selected</span> <em data-split="chars">work.</em></h1>
+      <p data-reveal>Three client sites that are live right now, and the open-source tools I build between them. Everything here links to the real thing.</p>
     </section>
 
-    <!-- SH-06 Chase cam: case studies -->
-    <section class="chapter block" id="cases" data-chapter data-shot="sh06" data-label="SH-06" data-dim="0.55" data-busy>
+    <!-- SH-06: client projects -->
+    <section class="chapter block" id="cases" data-chapter data-shot="sh06" data-label="Clients" data-dim="0.5" data-busy>
       <div class="cases">
-        <a class="case" href="contact.html" data-reveal data-cursor="Brief">
-          <div class="case__cover" style="--cover: linear-gradient(135deg, #ffb14a, #ff3347)"><span class="case__sample">Sample project</span><b>Kaapi<br>Co.</b></div>
+        <a class="case" href="https://synapical.com" target="_blank" rel="noopener" data-reveal data-cursor="Visit">
+          <div class="case__cover"><img src="assets/work/synapical.webp" alt="Synapical homepage" width="1200" height="750" loading="lazy" /></div>
           <div>
-            <span class="mono">D2C coffee · Online store · 11 days</span>
-            <h3>A checkout people finish</h3>
-            <p>Replaced a slow template store with a custom storefront and one-page Razorpay checkout.</p>
-            <div class="case__metric"><div><b>+62%</b><span>checkout completion</span></div><div><b>0.9s</b><span>page load on 4G</span></div></div>
+            <span class="mono">Software studio · Delhi · 2025</span>
+            <h3>Synapical</h3>
+            <p>Summer 2025 as a junior developer at Synapical, a studio building web apps, AI copilots and cloud infrastructure. Worked on its products, including Getcited, an audit tool for visibility in AI search.</p>
+            <ul class="case__tags"><li>Web</li><li>AI tooling</li><li>Internship</li></ul>
+            <span class="case__link">synapical.com ↗</span>
           </div>
         </a>
-        <a class="case" href="contact.html" data-reveal data-cursor="Brief">
-          <div class="case__cover" style="--cover: linear-gradient(135deg, #f2efe9, #8fa3c0)"><span class="case__sample">Sample project</span><b>Mehra<br>Clinic</b></div>
+        <a class="case" href="https://coffeedigital.vercel.app" target="_blank" rel="noopener" data-reveal data-cursor="Visit">
+          <div class="case__cover"><img src="assets/work/coffeedigital.webp" alt="Coffee Digital homepage" width="1200" height="750" loading="lazy" /></div>
           <div>
-            <span class="mono">Healthcare · Booking app · 16 days</span>
-            <h3>Bookings without phone tag</h3>
-            <p>Online slot booking with WhatsApp reminders and a front-desk dashboard.</p>
-            <div class="case__metric"><div><b>2.4×</b><span>bookings in month one</span></div><div><b>−70%</b><span>no-shows</span></div></div>
+            <span class="mono">Creative &amp; digital agency · India</span>
+            <h3>Coffee Digital</h3>
+            <p>The website for a full-stack marketing, creative and technology agency: a motion-led site with real-time 3D, built in TypeScript.</p>
+            <ul class="case__tags"><li>Marketing site</li><li>3D &amp; motion</li><li>TypeScript</li></ul>
+            <span class="case__link">coffeedigital.vercel.app ↗</span>
           </div>
         </a>
-        <a class="case" href="contact.html" data-reveal data-cursor="Brief">
-          <div class="case__cover" style="--cover: linear-gradient(135deg, #8fa3c0, #151821)"><span class="case__sample">Sample project</span><b style="color:#f2efe9">North<br>peak</b></div>
+        <a class="case" href="https://www.velsaro.in/" target="_blank" rel="noopener" data-reveal data-cursor="Visit">
+          <div class="case__cover"><img src="assets/work/velsaro.webp" alt="Velsaro homepage" width="1200" height="750" loading="lazy" /></div>
           <div>
-            <span class="mono">SaaS · Launch site · 9 days</span>
-            <h3>A launch page that ranks</h3>
-            <p>Marketing site and docs on Next.js with a CMS the founders update themselves.</p>
-            <div class="case__metric"><div><b>#3</b><span>Google, main keyword</span></div><div><b>100</b><span>Lighthouse SEO</span></div></div>
+            <span class="mono">Luxury perfume brand · India</span>
+            <h3>Velsaro</h3>
+            <p>A storefront for fragrances made from Indian botanicals: collection pages, a fragrance guide, gifting, and a founding-list signup ahead of launch.</p>
+            <ul class="case__tags"><li>E-commerce</li><li>Brand site</li><li>Pre-launch</li></ul>
+            <span class="case__link">velsaro.in ↗</span>
           </div>
         </a>
       </div>
-      <p data-reveal style="margin-top:3rem;text-align:center"><a class="btn btn--brake btn--lg" href="contact.html">Be the next launch</a></p>
+    </section>
+
+    <!-- Original clip: open source -->
+    <section class="chapter block" id="open-source" data-chapter data-shot="loop" data-mode="loop" data-label="Open source" data-dim="0.45" data-busy>
+      <p class="eyebrow mono">Open source</p>
+      <h2 class="display" data-split="words">Built in public.</h2>
+      <p class="body" data-reveal>Tools and experiments from <a href="https://github.com/harsh4k" target="_blank" rel="noopener">github.com/harsh4k</a>. Stars and descriptions as of September 2026.</p>
+      <div class="repos">
+        <a class="repo" href="https://github.com/harsh4k/shipd" target="_blank" rel="noopener" data-reveal>
+          <b>shipd</b><p>Daily dev and activity report for Windows. Pure PowerShell, no dependencies, all data stays local.</p>
+          <span class="repo__meta mono"><i class="lang lang--ps"></i>PowerShell · ★ 2</span>
+        </a>
+        <a class="repo" href="https://github.com/harsh4k/Getcited" target="_blank" rel="noopener" data-reveal>
+          <b>Getcited</b><p>Audits websites for visibility in AI search and gives practical recommendations for LLM-era SEO.</p>
+          <span class="repo__meta mono"><i class="lang lang--js"></i>JavaScript · ★ 1 · live</span>
+        </a>
+        <a class="repo" href="https://github.com/harsh4k/nexcart" target="_blank" rel="noopener" data-reveal>
+          <b>nexcart</b><p>A full-stack e-commerce platform built on a scalable architecture.</p>
+          <span class="repo__meta mono"><i class="lang lang--ts"></i>TypeScript · live</span>
+        </a>
+        <a class="repo" href="https://github.com/harsh4k/osynk" target="_blank" rel="noopener" data-reveal>
+          <b>osynk</b><p>A productivity platform for workflow automation and task organisation.</p>
+          <span class="repo__meta mono"><i class="lang lang--ts"></i>TypeScript · live</span>
+        </a>
+        <a class="repo" href="https://github.com/harsh4k/edith" target="_blank" rel="noopener" data-reveal>
+          <b>edith</b><p>Real-time system monitor for CPU, GPU and RAM usage.</p>
+          <span class="repo__meta mono"><i class="lang lang--py"></i>Python</span>
+        </a>
+        <a class="repo" href="https://github.com/harsh4k/portfolio-v2" target="_blank" rel="noopener" data-reveal>
+          <b>portfolio-v2</b><p>Personal portfolio covering projects, skills and the road so far.</p>
+          <span class="repo__meta mono"><i class="lang lang--ts"></i>TypeScript · live</span>
+        </a>
+      </div>
+      <p data-reveal style="margin-top:3rem;text-align:center"><a class="btn btn--brake btn--lg" href="contact.html">Start your project</a></p>
     </section>
