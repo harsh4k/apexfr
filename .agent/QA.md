@@ -29,3 +29,12 @@ Verified 2026-09-16 16:04 against code `6203ff71d590`.
   - states: default
   - 72 assertion(s) · 0 console error(s) · 0 failed request(s)
 - **runtime** — PASS via `runtime-verify.mjs` · recorded 2026-09-16 16:04
+
+## T2 — Director v2: interpolated frames, sub-frame blend, push-through transitions
+
+Verified 2026-09-16 16:11 against code `fc0b60d68681`.
+
+- **code** — PASS via `verify.mjs` · recorded 2026-09-16 16:10
+
+Recovery: 1 failed verification(s) over 1 attempt(s).
+- #1 runtime FAIL — ENVIRONMENT

@@ -2,7 +2,7 @@
   "schema": 1,
   "project": "Late Apex site",
   "created": "2026-09-16T15:36:22.044Z",
-  "updated": "2026-09-16T16:04:39.800Z",
+  "updated": "2026-09-16T16:11:53.425Z",
   "phase": "Phase 2 — polish, real content, legal",
   "active": null,
   "tasks": [
@@ -63,16 +63,80 @@
     {
       "id": "T2",
       "title": "Director v2: interpolated frames, sub-frame blend, push-through transitions",
-      "state": "TODO",
+      "state": "DONE",
       "deps": [
         "T1"
       ],
-      "attempts": 0,
-      "evidence": {},
+      "attempts": 1,
+      "evidence": {
+        "code": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T16:10:40.154Z",
+          "codeHash": "fc0b60d6868187173da3ba318dd06798aef867e7f3cda958cc1c03cd1ed2272e"
+        },
+        "runtime": {
+          "verdict": "FAIL",
+          "recorded": "2026-09-16T16:10:41.491Z",
+          "codeHash": "fc0b60d6868187173da3ba318dd06798aef867e7f3cda958cc1c03cd1ed2272e",
+          "category": "ENVIRONMENT"
+        },
+        "ui": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T16:11:53.006Z",
+          "codeHash": "fc0b60d6868187173da3ba318dd06798aef867e7f3cda958cc1c03cd1ed2272e",
+          "coverage": {
+            "routes": [
+              "/",
+              "/about.html",
+              "/contact.html",
+              "/pricing.html",
+              "/services.html",
+              "/work.html"
+            ],
+            "viewports": [
+              "mobile",
+              "desktop"
+            ],
+            "states": [
+              "default"
+            ],
+            "checks": 12,
+            "consoleErrors": 0,
+            "failedRequests": 0
+          }
+        }
+      },
       "notes": [],
-      "started": null,
-      "finished": null,
-      "blockedReason": null
+      "started": "2026-09-16T16:05:13.357Z",
+      "finished": "2026-09-16T16:11:53.423Z",
+      "blockedReason": null,
+      "base": "70196eb19eea2ab9bf0de292fa41d49cc1f6e410",
+      "recovery": {
+        "round": 0,
+        "failures": [
+          {
+            "n": 1,
+            "round": 0,
+            "attempt": 1,
+            "class": "runtime",
+            "at": "2026-09-16T16:10:41.518Z",
+            "verdict": "FAIL",
+            "codeHash": "fc0b60d6868187173da3ba318dd06798aef867e7f3cda958cc1c03cd1ed2272e",
+            "category": "ENVIRONMENT",
+            "auto": "ENVIRONMENT",
+            "rule": "port-in-use",
+            "signals": [
+              {
+                "rule": "port-in-use",
+                "match": "EADDRINUSE"
+              }
+            ],
+            "diagnosis": null,
+            "result": null
+          }
+        ],
+        "stop": null
+      }
     },
     {
       "id": "T3",
@@ -275,6 +339,36 @@
       "ts": "2026-09-16T16:04:39.800Z",
       "event": "done",
       "detail": "T1 (code:PASS ui:PASS runtime:PASS)"
+    },
+    {
+      "ts": "2026-09-16T16:05:13.358Z",
+      "event": "start",
+      "detail": "T2 (attempt 1, checkpoint clean tree)"
+    },
+    {
+      "ts": "2026-09-16T16:07:52.521Z",
+      "event": "decision",
+      "detail": "Shot cuts use a fade-out → anamorphic headlight flare → fade-in instead of a crossfade; frames are 2x motion-interpolated (ffmpeg minterpolate) and neighbouring frames blend by the scroll fraction."
+    },
+    {
+      "ts": "2026-09-16T16:10:40.200Z",
+      "event": "evidence",
+      "detail": "T2/code PASS"
+    },
+    {
+      "ts": "2026-09-16T16:10:41.519Z",
+      "event": "evidence",
+      "detail": "T2/runtime FAIL"
+    },
+    {
+      "ts": "2026-09-16T16:11:53.032Z",
+      "event": "evidence",
+      "detail": "T2/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T16:11:53.425Z",
+      "event": "done",
+      "detail": "T2 (code:PASS)"
     }
   ]
 }

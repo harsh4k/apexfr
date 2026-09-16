@@ -12,3 +12,7 @@
 ## T1 — Test harness: server, lint, Playwright smoke/layout/visual
 
 _2026-09-16 16:04_ · code:PASS ui:PASS runtime:PASS · code `6203ff71d590`
+
+## T2 — Director v2: interpolated frames, sub-frame blend, push-through transitions
+
+_2026-09-16 16:11_ · code:PASS · code `fc0b60d68681`

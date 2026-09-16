@@ -1,0 +1,30 @@
+{
+  "task": "T2",
+  "class": "runtime",
+  "verdict": "FAIL",
+  "recorded": "2026-09-16T16:10:41.491Z",
+  "codeHash": "fc0b60d6868187173da3ba318dd06798aef867e7f3cda958cc1c03cd1ed2272e",
+  "head": "70196eb",
+  "tool": "runtime-verify.mjs",
+  "detail": {
+    "verdict": "FAIL",
+    "detail": "the server exited on boot (code 1)",
+    "log": "> late-apex-site@0.2.0 serve\n> node scripts/serve.mjs\nnode:events:487\n      throw er; // Unhandled 'error' event\n      ^\nError: listen EADDRINUSE: address already in use :::5173\n    at Server.setupListenHandle [as _listen2] (node:net:2167:16)\n    at listenInCluster (node:net:2224:12)\n    at Server.listen (node:net:2344:7)\n    at file:///X:/Projects/Websites/Webci/scripts/serve.mjs:33:4\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\nEmitted 'error' event on Server instance at:\n    at emitErrorNT (node:net:2203:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {\n  code: 'EADDRINUSE',\n  errno: -4091,\n  syscall: 'listen',\n  address: '::',\n  port: 5173\n}\nNode.js v24.19.0",
+    "script": "serve",
+    "producer": "runtime-verify.mjs",
+    "codeHash": "fc0b60d6868187173da3ba318dd06798aef867e7f3cda958cc1c03cd1ed2272e",
+    "finishedAt": "2026-09-16T16:10:41.237Z"
+  },
+  "classification": {
+    "category": "ENVIRONMENT",
+    "rule": "port-in-use",
+    "confidence": "rule",
+    "signals": [
+      {
+        "rule": "port-in-use",
+        "category": "ENVIRONMENT",
+        "match": "EADDRINUSE"
+      }
+    ]
+  }
+}

@@ -46,7 +46,6 @@ test("background is painted, not blank", async ({ page }) => {
 for (const file of ["index.html", "services.html"]) {
   test(`scrubbing ${file} changes the picture on most frames`, async ({ page }, info) => {
     test.skip(info.project.name === "mobile", "touch scrolling is covered on desktop sizes");
-    test.fixme(true, "known defect: frames step like slides — re-enabled by T2");
     await open(page, file);
     // wait for the sharp frames of the first chapter
     await page.waitForTimeout(2500);
