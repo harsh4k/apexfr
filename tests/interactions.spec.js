@@ -2,14 +2,34 @@
 import { test, expect } from "@playwright/test";
 import { open } from "./helpers.js";
 
-test("currency switch swaps every price", async ({ page }) => {
+test("currency switch repaints every price from the rate card", async ({ page }) => {
   await open(page, "pricing.html");
   const usd = page.locator('.toggle [data-cur="usd"]');
   await usd.scrollIntoViewIfNeeded();
   await usd.click();
   await expect(usd).toHaveAttribute("aria-pressed", "true");
-  const prices = await page.locator("#pricing [data-inr]").evaluateAll((els) => els.map((e) => [e.textContent, e.dataset.usd]));
-  for (const [shown, want] of prices) expect(shown).toBe(want);
+  const wrong = await page.evaluate(() => [...document.querySelectorAll("[data-price]")]
+    .filter((el) => el.textContent !== "$" + PricingRates.usd[el.dataset.price].toLocaleString("en-US"))
+    .map((el) => `${el.dataset.price}: ${el.textContent}`));
+  expect(wrong).toEqual([]);
+});
+
+test("estimator adds pages, extras and rush correctly", async ({ page }) => {
+  await open(page, "pricing.html");
+  const form = page.locator("#estimator-form");
+  await form.scrollIntoViewIfNeeded();
+  await page.fill("#estSimple", "4");
+  await page.fill("#estStandard", "2");
+  await page.locator('[data-step="1"][data-for="advanced"]').click();
+  await page.locator('input[name="cms"]').check();
+  await page.locator('input[name="rush"]').check();
+  const r = await page.evaluate(() => PricingRates.inr);
+  const expected = Math.round((r.setup + 4 * r.simple + 2 * r.standard + r.advanced + r.cms) * 1.25);
+  await expect(page.locator("#estTotal")).toHaveText("₹" + expected.toLocaleString("en-IN"));
+  const href = await page.locator("#estSend").getAttribute("href");
+  expect(href).toContain("contact.html?estimate=");
+  await page.goto("/" + href);
+  await expect(page.locator("#bMsg")).toHaveValue(/7 pages/);
 });
 
 test("project brief validates, then confirms", async ({ page }) => {

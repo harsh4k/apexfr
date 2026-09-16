@@ -28,78 +28,140 @@
 
   <main id="top">
     <!-- script: pricing.js -->
-    <!-- SH-05 Overhead circle: the price board -->
-    <section class="chapter pricing block" id="pricing" data-chapter data-shot="sh05" data-label="SH-05" data-dim="0.6" data-busy>
-      <div class="page-hero" style="min-height:0;padding:4rem 0 1rem">
-        <p class="page-hero__index mono" data-scramble>03 / Pricing</p>
-        <h1 aria-label="Fixed prices"><span data-split="chars">Fixed</span> <em data-split="chars">prices.</em></h1>
-      </div>
-      <div class="pricing__head">
-        <p class="body" data-reveal>Printed in public, so you can budget before we ever talk. Every plan is a fixed quote; the scope is agreed in writing before work starts.</p>
+    <div id="pricing-page" data-cur="inr">
+    <!-- SH-05 Overhead circle: how pricing works -->
+    <section class="chapter block" id="pricing" data-chapter data-shot="sh05" data-label="Pricing" data-dim="0.6" data-busy>
+      <div class="price-head">
+        <div class="page-hero" style="min-height:0;padding:3rem 0 0">
+          <p class="page-hero__index mono">Pricing</p>
+          <h1 aria-label="Priced by the page"><span data-split="chars">Priced by</span> <em data-split="chars">the page.</em></h1>
+        </div>
         <div class="toggle" role="group" aria-label="Currency">
-          <button class="is-on" type="button" data-cur="inr" aria-pressed="true">₹ INR</button>
-          <button type="button" data-cur="usd" aria-pressed="false">$ USD</button>
+          <button class="is-on" type="button" data-cur="inr" aria-pressed="true">₹ India</button>
+          <button type="button" data-cur="usd" aria-pressed="false">$ International</button>
         </div>
       </div>
+      <p class="body price-lede" data-reveal>Every quote is worked out the same way: how many pages the site needs, how complex each page is, and anything extra it has to do. The fixed quote you get is this sum, agreed in writing before work starts.</p>
+      <p class="price-note mono" data-cur-note="inr" data-reveal>Prices in INR. GST is added if applicable.</p>
+      <p class="price-note mono" data-cur-note="usd" data-reveal hidden>Prices in USD for clients outside India. No Indian GST on exported services.</p>
+
+      <div class="rates">
+        <article class="rate" data-reveal>
+          <span class="mono">Once per project</span><h3>Setup</h3><b data-price="setup">₹4,999</b>
+          <p>Design direction, type and colour system, hosting, domain connection, SEO basics and analytics.</p>
+        </article>
+        <article class="rate" data-reveal>
+          <span class="mono">Per page</span><h3>Simple</h3><b data-price="simple">₹1,500</b>
+          <p>Mostly text and images on an existing layout: about, contact, team, policy pages.</p>
+        </article>
+        <article class="rate" data-reveal>
+          <span class="mono">Per page</span><h3>Standard</h3><b data-price="standard">₹3,500</b>
+          <p>A custom layout with several sections, light animation or a form: most home, service and product pages.</p>
+        </article>
+        <article class="rate" data-reveal>
+          <span class="mono">Per page</span><h3>Advanced</h3><b data-price="advanced">₹7,500</b>
+          <p>Scroll-driven stories, 3D, live data, filters or dashboards: pages that behave like small apps.</p>
+        </article>
+      </div>
+      <dl class="addons" data-reveal>
+        <div><dt>Editable content (CMS)</dt><dd data-price="cms">₹6,000</dd></div>
+        <div><dt>Payments or bookings</dt><dd data-price="payments">₹8,000</dd></div>
+        <div><dt>Logins and user accounts</dt><dd data-price="accounts">₹12,000</dd></div>
+        <div><dt>Each extra language</dt><dd data-price="language">₹4,000</dd></div>
+        <div><dt>Delivery in under a week</dt><dd>+25%</dd></div>
+      </dl>
+    </section>
+
+    <!-- Original clip: estimator + packages -->
+    <section class="chapter block" id="estimator" data-chapter data-shot="loop" data-mode="loop" data-label="Estimate" data-dim="0.45" data-busy>
+      <p class="eyebrow mono">Estimate</p>
+      <h2 class="display" data-split="words">Work out your own quote.</h2>
+      <div class="estimator" data-reveal>
+        <form id="estimator-form" class="est__form" onsubmit="return false">
+          <fieldset class="est__group">
+            <legend>Pages</legend>
+            <div class="stepper"><label for="estSimple">Simple</label><button type="button" data-step="-1" data-for="simple" aria-label="Fewer simple pages">−</button><input id="estSimple" name="simple" type="number" inputmode="numeric" min="0" max="40" value="2" /><button type="button" data-step="1" data-for="simple" aria-label="More simple pages">+</button></div>
+            <div class="stepper"><label for="estStandard">Standard</label><button type="button" data-step="-1" data-for="standard" aria-label="Fewer standard pages">−</button><input id="estStandard" name="standard" type="number" inputmode="numeric" min="0" max="40" value="3" /><button type="button" data-step="1" data-for="standard" aria-label="More standard pages">+</button></div>
+            <div class="stepper"><label for="estAdvanced">Advanced</label><button type="button" data-step="-1" data-for="advanced" aria-label="Fewer advanced pages">−</button><input id="estAdvanced" name="advanced" type="number" inputmode="numeric" min="0" max="40" value="0" /><button type="button" data-step="1" data-for="advanced" aria-label="More advanced pages">+</button></div>
+          </fieldset>
+          <fieldset class="est__group">
+            <legend>Extras</legend>
+            <label class="check"><input type="checkbox" name="cms" data-label="Editable content (CMS)" /> Editable content (CMS)</label>
+            <label class="check"><input type="checkbox" name="payments" data-label="Payments or bookings" /> Payments or bookings</label>
+            <label class="check"><input type="checkbox" name="accounts" data-label="Logins and accounts" /> Logins and accounts</label>
+            <div class="stepper"><label for="estLang">Extra languages</label><button type="button" data-step="-1" data-for="languages" aria-label="Fewer languages">−</button><input id="estLang" name="languages" type="number" inputmode="numeric" min="0" max="10" value="0" /><button type="button" data-step="1" data-for="languages" aria-label="More languages">+</button></div>
+            <label class="check"><input type="checkbox" name="rush" /> Delivery in under a week</label>
+          </fieldset>
+        </form>
+        <aside class="est__out" aria-live="polite">
+          <span class="mono">Estimated total</span>
+          <output id="estTotal" class="est__total" for="estSimple estStandard estAdvanced estLang">₹18,499</output>
+          <ul id="estLines" class="est__lines"></ul>
+          <a id="estSend" class="btn btn--brake" href="contact.html">Send this estimate</a>
+          <p class="mono est__small">An estimate, not a quote. The final quote comes after a short call.</p>
+        </aside>
+      </div>
+
+      <p class="eyebrow mono" style="margin-top:6rem">Packages</p>
+      <h2 class="display" data-split="words">Or start from a bundle.</h2>
       <div class="tiers">
         <article class="tier" data-reveal>
-          <header><span class="mono">Stage 1</span><h3>Starter</h3></header>
-          <p class="tier__price"><b data-inr="24,999" data-usd="349">24,999</b><small>one-time</small></p>
-          <p class="tier__for">For a new business that needs to look real online, fast.</p>
-          <ul><li>Up to 5 pages</li><li>Mobile-first design</li><li>Contact form + WhatsApp</li><li>Basic SEO &amp; analytics</li><li>7-day delivery</li></ul>
-          <a class="btn btn--ghost" href="contact.html">Start Stage 1</a>
+          <header><span class="mono">For new businesses</span><h3>Starter</h3></header>
+          <p class="tier__price"><b data-price="starter">₹9,999</b><small>one-time</small></p>
+          <ul><li>Up to 4 simple pages</li><li>Setup included</li><li>Contact form and WhatsApp link</li><li>Delivered in about a week</li></ul>
+          <a class="btn btn--ghost" href="contact.html">Start with Starter</a>
         </article>
         <article class="tier tier--hot" data-reveal>
-          <header><span class="mono">Stage 2 · Most booked</span><h3>Growth</h3></header>
-          <p class="tier__price"><b data-inr="59,999" data-usd="799">59,999</b><small>one-time</small></p>
-          <p class="tier__for">For brands that want the site to actually sell.</p>
-          <ul><li>Up to 12 pages + blog</li><li>Custom motion &amp; scroll story</li><li>CMS you can edit yourself</li><li>Payments or booking</li><li>Full SEO setup</li><li>14-day delivery</li></ul>
-          <a class="btn btn--brake" href="contact.html">Start Stage 2</a>
+          <header><span class="mono">Most requested</span><h3>Growth</h3></header>
+          <p class="tier__price"><span class="from">from</span><b data-price="growth">₹34,999</b><small>one-time</small></p>
+          <ul><li>Up to 8 pages, 2 of them advanced</li><li>Editable content (CMS)</li><li>Scroll and motion design</li><li>Delivered in about two weeks</li></ul>
+          <a class="btn btn--brake" href="contact.html">Start with Growth</a>
         </article>
         <article class="tier" data-reveal>
-          <header><span class="mono">Stage 3</span><h3>Full build</h3></header>
-          <p class="tier__price"><span class="from">from</span><b data-inr="1,29,999" data-usd="1,690">1,29,999</b><small>scoped</small></p>
-          <p class="tier__for">Web apps, stores and anything with logins.</p>
-          <ul><li>Login, database, roles</li><li>Admin dashboard</li><li>Store or SaaS billing</li><li>Integrations &amp; APIs</li><li>Milestone payments</li></ul>
+          <header><span class="mono">Stores and web apps</span><h3>Custom</h3></header>
+          <p class="tier__price"><span class="from">from</span><b data-price="custom">₹60,000</b><small>quoted</small></p>
+          <ul><li>Logins, payments, dashboards</li><li>Paid in milestones</li><li>Scoped on a call</li><li>Timeline agreed up front</li></ul>
           <a class="btn btn--ghost" href="contact.html">Scope a build</a>
         </article>
       </div>
-      <p class="care mono" data-reveal style="margin-top:2rem">+ Pit crew care plan — <b data-inr="3,999" data-usd="59">3,999</b>/month · cancel anytime</p>
+      <p class="care mono" data-reveal>Care plan after launch: <b data-price="care">₹1,999</b> a month. Updates, backups, uptime checks, small edits. Cancel anytime.</p>
     </section>
 
-    <!-- Original clip: cost split + FAQ -->
-    <section class="chapter block" id="cost-chapter" data-chapter data-shot="loop" data-mode="loop" data-label="LOOP" data-dim="0.5" data-busy>
+    <!-- SH-05 again, dimmed: cost split + FAQ -->
+    <section class="chapter block" id="cost-chapter" data-chapter data-shot="sh05" data-label="Questions" data-dim="0.4" data-busy>
       <div class="cost" id="cost">
         <div class="cost__copy">
-          <h2 class="display display--sm" data-split="words">Where your money actually goes.</h2>
-          <p class="body" data-reveal>Take the Growth plan. Roughly 60 working hours go into it. Here's the split, so you can see nothing is padding.</p>
+          <h2 class="display display--sm" data-split="words">Where the money goes.</h2>
+          <p class="body" data-reveal>Take a typical five-page site. Roughly this is how the hours split, so you can see what you're paying for.</p>
         </div>
         <div class="cost__chart" data-reveal>
-          <div class="cost__bar" role="img" aria-label="Cost split: design 28 percent, build 42 percent, testing and performance 16 percent, launch and handover 14 percent">
+          <div class="cost__bar" role="img" aria-label="Cost split: design 28 percent, build 42 percent, testing 16 percent, launch and handover 14 percent">
             <i style="--w:28%" class="c1"></i><i style="--w:42%" class="c2"></i><i style="--w:16%" class="c3"></i><i style="--w:14%" class="c4"></i>
           </div>
           <dl class="cost__legend">
-            <div><dt class="c1">Design</dt><dd>28% · 17 hrs</dd></div>
-            <div><dt class="c2">Build</dt><dd>42% · 25 hrs</dd></div>
-            <div><dt class="c3">Testing &amp; speed</dt><dd>16% · 10 hrs</dd></div>
-            <div><dt class="c4">Launch &amp; handover</dt><dd>14% · 8 hrs</dd></div>
+            <div><dt class="c1">Design</dt><dd>28%</dd></div>
+            <div><dt class="c2">Build</dt><dd>42%</dd></div>
+            <div><dt class="c3">Testing &amp; speed</dt><dd>16%</dd></div>
+            <div><dt class="c4">Launch &amp; handover</dt><dd>14%</dd></div>
           </dl>
-          <p class="cost__note mono">Effective rate ≈ ₹1,000/hr. Hosting, domains and paid plugins are billed at cost, with no markup.</p>
+          <p class="cost__note mono">Hosting, domains and paid plugins are billed at cost, with no markup.</p>
         </div>
       </div>
 
-      <div style="margin-top:6rem">
-        <p class="eyebrow mono" data-scramble>Pit questions</p>
+      <div id="faq" style="margin-top:6rem">
+        <p class="eyebrow mono">Questions</p>
         <h2 class="display" data-split="words">Before you ask.</h2>
         <div class="faq" data-reveal>
-          <details><summary>How do payments work?</summary><p>50% to start, 50% at launch. Full builds are split into milestones, each paid only after you approve it on the preview link.</p></details>
-          <details><summary>What if I need more than the plan covers?</summary><p>You get a written quote for the extra before any of it is built. Nothing is added to an invoice without your yes.</p></details>
-          <details><summary>Do I pay for hosting?</summary><p>Yes, directly to the provider, at cost. Most sites run on free or ₹0–1,500/month tiers; I'll tell you which before we start.</p></details>
-          <details><summary>Can you work with my designer?</summary><p>Yes. Send the Figma file and I'll quote the build only, usually 30–40% less than the full plan.</p></details>
-          <details><summary>What happens after the 30-day warranty?</summary><p>Either the Pit crew care plan, or pay-as-you-go changes at ₹1,000/hr. You're never locked in.</p></details>
+          <details><summary>What counts as a page?</summary><p>Any screen with its own address. Repeated items, like 30 products or blog posts, use one template page plus the CMS, not 30 pages.</p></details>
+          <details><summary>How do payments work?</summary><p>50% to start and 50% at launch. Custom builds are split into milestones, each paid after you approve it on a preview link.</p></details>
+          <details><summary>I'm outside India. How do you bill?</summary><p>In USD by bank transfer or card. Contracts follow the <a href="terms.html">terms of service</a>, with disputes handled by arbitration.</p></details>
+          <details><summary>What if I need more later?</summary><p>You get a written quote for the change before anything is built, at the same rates as above.</p></details>
+          <details><summary>Do I pay for hosting?</summary><p>Yes, directly to the provider, at cost. Most small sites run on free or low-cost tiers; you'll know which before we start.</p></details>
+          <details><summary>Can I get a refund?</summary><p>See the <a href="refunds.html">refund and cancellation policy</a>. In short: the advance covers work already started; milestones are refunded for work not yet begun.</p></details>
         </div>
       </div>
     </section>
+    </div>
   </main>
 
   <footer class="footer" id="footer"></footer>

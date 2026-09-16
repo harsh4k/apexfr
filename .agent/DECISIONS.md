@@ -44,3 +44,9 @@ Owner said the old crossfade looked like a bad double exposure and scrubbing fel
 **Motion: reveal states only leave when fully off-screen; no scroll skew; no blur on reveals; native cross-document view transitions with an ink-fade fallback; loader only on the first page of a visit; pass-by ends in a feathered tail-light bloom.**
 
 Owner reported text popping out, jerky page changes and an awkward red wipe.
+
+## 2026-09-16 19:23
+
+**Pricing model: setup + pages x complexity rate + add-ons, +25% rush; INR for India (GST extra if registered), USD for international clients. Starter lowered to Rs 9,999.**
+
+Owner prices by page count and page complexity and said the old starter was too high; all numbers live in one config in pricing.js so the owner can tune them.

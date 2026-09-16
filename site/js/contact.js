@@ -4,6 +4,12 @@
   if (!form) return;
   const msg = document.getElementById("briefMsg");
 
+  // Arriving from the pricing estimator: carry the estimate into the brief
+  const est = new URLSearchParams(location.search).get("estimate");
+  if (est) form.elements.message.value = `${est.slice(0, 400)}
+
+`;
+
   const check = (el) => {
     const ok = el.checkValidity() && el.value.trim() !== "";
     el.setAttribute("aria-invalid", String(!ok));

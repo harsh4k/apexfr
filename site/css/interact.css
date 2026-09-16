@@ -74,7 +74,7 @@
   border-radius: 99px; background: var(--paper);
   transition: transform .5s var(--ease-out);
 }
-.pricing[data-cur="usd"] .toggle::before { transform: translateX(100%); }
+[data-cur="usd"] .toggle::before { transform: translateX(100%); }
 .toggle button { position: relative; flex: 1; white-space: nowrap; }
 .toggle button.is-on { background: none; }
 

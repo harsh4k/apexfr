@@ -2,7 +2,7 @@
   "schema": 1,
   "project": "Late Apex site",
   "created": "2026-09-16T15:36:22.044Z",
-  "updated": "2026-09-16T19:23:14.998Z",
+  "updated": "2026-09-16T19:33:05.572Z",
   "phase": "Phase 2 — polish, real content, legal",
   "active": null,
   "tasks": [
@@ -376,16 +376,62 @@
     {
       "id": "T7",
       "title": "Pricing: complexity x pages model + estimator",
-      "state": "TODO",
+      "state": "DONE",
       "deps": [
         "T4"
       ],
-      "attempts": 0,
-      "evidence": {},
+      "attempts": 1,
+      "evidence": {
+        "code": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:31:16.603Z",
+          "codeHash": "29a08bb6f85ef5a256532116efb9e0fbb3336082853d04cc5c51318222446dbc"
+        },
+        "runtime": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:31:17.852Z",
+          "codeHash": "29a08bb6f85ef5a256532116efb9e0fbb3336082853d04cc5c51318222446dbc"
+        },
+        "ui": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:33:05.154Z",
+          "codeHash": "29a08bb6f85ef5a256532116efb9e0fbb3336082853d04cc5c51318222446dbc",
+          "coverage": {
+            "routes": [
+              "/",
+              "/about.html",
+              "/contact.html",
+              "/licence.html",
+              "/pricing.html",
+              "/privacy.html",
+              "/refunds.html",
+              "/services.html",
+              "/terms.html",
+              "/work.html"
+            ],
+            "viewports": [
+              "mobile",
+              "desktop"
+            ],
+            "states": [
+              "default"
+            ],
+            "checks": 20,
+            "consoleErrors": 0,
+            "failedRequests": 0
+          }
+        }
+      },
       "notes": [],
-      "started": null,
-      "finished": null,
-      "blockedReason": null
+      "started": "2026-09-16T19:23:39.638Z",
+      "finished": "2026-09-16T19:33:05.570Z",
+      "blockedReason": null,
+      "base": "55027cbcde614b07da114c8cb8d9aa39a0ec5847",
+      "recovery": {
+        "round": 0,
+        "failures": [],
+        "stop": null
+      }
     },
     {
       "id": "T8",
@@ -657,6 +703,36 @@
       "ts": "2026-09-16T19:23:14.998Z",
       "event": "done",
       "detail": "T6 (code:PASS ui:PASS)"
+    },
+    {
+      "ts": "2026-09-16T19:23:39.638Z",
+      "event": "start",
+      "detail": "T7 (attempt 1, checkpoint clean tree)"
+    },
+    {
+      "ts": "2026-09-16T19:23:39.742Z",
+      "event": "decision",
+      "detail": "Pricing model: setup + pages x complexity rate + add-ons, +25% rush; INR for India (GST extra if registered), USD for international clients. Starter lowered to Rs 9,999."
+    },
+    {
+      "ts": "2026-09-16T19:31:16.631Z",
+      "event": "evidence",
+      "detail": "T7/code PASS"
+    },
+    {
+      "ts": "2026-09-16T19:31:17.877Z",
+      "event": "evidence",
+      "detail": "T7/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T19:33:05.180Z",
+      "event": "evidence",
+      "detail": "T7/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T19:33:05.572Z",
+      "event": "done",
+      "detail": "T7 (code:PASS ui:PASS)"
     }
   ]
 }
