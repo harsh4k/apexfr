@@ -1,12 +1,15 @@
 // Visual regression: the top of every page and the footer, per viewport.
-// The canvas footage, live clock and marquee are masked; the layout is what
-// these screenshots guard. Refresh baselines with `npm run test:update`.
+// The live clock and marquee are masked; the layout is what these
+// screenshots guard. Refresh baselines with `npm run test:update`.
 import { test, expect } from "@playwright/test";
 import { PAGES, open, scrollTo } from "./helpers.js";
 
 // Transitions are switched off so every reveal is already at its end state.
-const FREEZE = "*,*::before,*::after{transition:none!important;animation:none!important;caret-color:transparent!important}";
-const masks = (page) => [page.locator("#stage"), page.locator("#clock"), page.locator(".marquee"), page.locator(".hud")];
+// The footage canvas is hidden (not masked: a full-screen mask would cover
+// the whole page), leaving the layout on the plain page colour.
+const FREEZE = "*,*::before,*::after{transition:none!important;animation:none!important;caret-color:transparent!important}" +
+  "#stage,.hud{visibility:hidden!important}";
+const masks = (page) => [page.locator("#clock"), page.locator(".marquee")];
 
 for (const { file, name } of PAGES) {
   test(`${name} — first screen`, async ({ page }) => {

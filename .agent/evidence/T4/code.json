@@ -1,0 +1,73 @@
+{
+  "task": "T4",
+  "class": "code",
+  "verdict": "PASS",
+  "recorded": "2026-09-16T19:02:35.114Z",
+  "codeHash": "54ff6915811d58c5cae98a2179117039ef07b546c7f0a41b7208a5cf85136d1f",
+  "head": "a4b8157",
+  "tool": "verify.mjs",
+  "detail": {
+    "verdict": "PASS",
+    "kind": "node",
+    "root": "X:\\Projects\\Websites\\Webci",
+    "producer": "verify.mjs",
+    "codeHash": "54ff6915811d58c5cae98a2179117039ef07b546c7f0a41b7208a5cf85136d1f",
+    "finishedAt": "2026-09-16T19:02:34.993Z",
+    "checks": [
+      {
+        "name": "lint",
+        "status": "PASS",
+        "detail": "",
+        "output": "",
+        "run": {
+          "command": "npm",
+          "args": [
+            "run",
+            "lint"
+          ],
+          "termination": "exit",
+          "exitCode": 0,
+          "durationMs": 763,
+          "timedOut": false,
+          "treeKilled": false,
+          "outputHeldOpen": false,
+          "shell": false,
+          "error": null
+        }
+      },
+      {
+        "name": "types",
+        "status": "SKIP",
+        "detail": "no tsconfig",
+        "output": ""
+      },
+      {
+        "name": "build",
+        "status": "SKIP",
+        "detail": "no build script",
+        "output": ""
+      },
+      {
+        "name": "test",
+        "status": "PASS",
+        "detail": "",
+        "output": "",
+        "run": {
+          "command": "npm",
+          "args": [
+            "run",
+            "test"
+          ],
+          "termination": "exit",
+          "exitCode": 0,
+          "durationMs": 200059,
+          "timedOut": false,
+          "treeKilled": false,
+          "outputHeldOpen": false,
+          "shell": false,
+          "error": null
+        }
+      }
+    ]
+  }
+}

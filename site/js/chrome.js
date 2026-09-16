@@ -12,11 +12,11 @@
   header.className = "nav";
   header.id = "nav";
   header.innerHTML = `
-    <a class="nav__logo" href="index.html" aria-label="Harsh Studio home">HARSH<span>/</span>STUDIO</a>
+    <a class="nav__logo" href="index.html" aria-label="${BRAND.name} — home">${BRAND.mark(26)}<span class="nav__word">${BRAND.name}</span></a>
     <nav class="nav__links" id="navLinks" aria-label="Primary">
-      ${links.map(([p, t], i) => `<a href="${href(p)}"${p === page ? ' class="is-active" aria-current="page"' : ""}><small class="mono">0${i + 1}</small>${t}</a>`).join("")}
+      ${links.map(([p, t]) => `<a href="${href(p)}"${p === page ? ' class="is-active" aria-current="page"' : ""}>${t}</a>`).join("")}
     </nav>
-    <a class="btn btn--brake nav__cta" href="contact.html">Book a slot</a>
+    <a class="btn btn--brake nav__cta" href="contact.html">Start a project</a>
     <button class="nav__menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>`;
   document.body.prepend(header);
 
@@ -24,10 +24,8 @@
   hud.className = "hud mono";
   hud.setAttribute("aria-hidden", "true");
   hud.innerHTML = `
-    <div class="hud__row"><b>SHOT</b><span id="hudShot">—</span></div>
-    <div class="hud__row"><b>FRM</b><span id="hudFrame">001</span></div>
-    <div class="hud__row"><b>SPD</b><span id="hudSpd">000 km/h</span></div>
-    <div class="hud__row"><b>DIR</b><span id="hudDir" class="hud__dir">■ IDLE</span></div>`;
+    <span class="hud__scene" id="hudShot">—</span>
+    <span class="hud__track"><i id="hudProg"></i></span>`;
   const rail = document.createElement("div");
   rail.className = "progress";
   rail.innerHTML = '<i id="progressBar"></i>';
@@ -102,12 +100,12 @@
   // ---- Loop (sleeps when idle) ----
   const root = document.documentElement;
   const shade = document.querySelector(".stage-shade");
-  const hudShot = $("hudShot"), hudFrame = $("hudFrame"), hudSpd = $("hudSpd"), hudDir = $("hudDir");
+  const hudShot = $("hudShot"), hudProg = $("hudProg");
   const barEl = $("progressBar");
   const footer = $("footer");
   const cache = {};
   const set = (el, key, name, val) => { if (cache[key] !== val) { cache[key] = val; el.style.setProperty(name, val); } };
-  let last = performance.now(), lastY = window.scrollY, prevY = -1, running = false, dir = "";
+  let last = performance.now(), lastY = window.scrollY, prevY = -1, running = false;
 
   function kick() {
     if (running) return;
@@ -125,15 +123,8 @@
     const v = s.velocity || 0;
     window.ScrollState.vel = v;
 
-    hudShot.textContent = s.shot || "—";
-    hudFrame.textContent = String((s.frame || 0) + 1).padStart(3, "0");
-    hudSpd.textContent = `${String(Math.min(299, Math.round(Math.abs(v) * 14))).padStart(3, "0")} km/h`;
-    const d = v > 0.05 ? "fwd" : v < -0.05 ? "rev" : "idle";
-    if (d !== dir) {
-      dir = d;
-      hudDir.textContent = d === "fwd" ? "▼ FORWARD" : d === "rev" ? "▲ REVERSE" : "■ IDLE";
-      hudDir.className = "hud__dir" + (d === "fwd" ? " is-fwd" : d === "rev" ? " is-rev" : "");
-    }
+    if (hudShot.textContent !== (s.shot || "")) hudShot.textContent = s.shot || "";
+    set(hudProg, "hudp", "transform", `scaleX(${(s.progress || 0).toFixed(3)})`);
     set(barEl, "bar", "transform", `scaleY(${max > 0 ? (y / max).toFixed(4) : 0})`);
     if (!reduced) {
       set(shade, "vel", "--vel", Math.min(1, Math.abs(v) / 25).toFixed(2));

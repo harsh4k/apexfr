@@ -44,6 +44,7 @@
 .wordmark .slash { color: var(--brake); }
 
 .footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: .78rem; color: var(--paper-faint); }
+.footer__sign { display: inline-flex; align-items: center; gap: .5rem; }
 .footer__bottom nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .footer__bottom a { text-decoration: none; transition: color .3s; }
 .footer__bottom a:hover { color: var(--paper); }

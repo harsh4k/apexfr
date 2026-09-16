@@ -20,3 +20,7 @@ _2026-09-16 16:11_ · code:PASS · code `fc0b60d68681`
 ## T3 — Motion cleanup: no jerks, soft page transitions, pass-by bloom
 
 _2026-09-16 16:31_ · code:PASS ui:PASS · code `adfb63361387`
+
+## T4 — Brand: new name, SVG logo, favicon, de-slop
+
+_2026-09-16 19:04_ · code:PASS ui:PASS · code `54ff6915811d`

@@ -1,22 +1,22 @@
     <!-- script: contact.js -->
     <!-- SH-01 Ignition, dimmed: the brief -->
-    <section class="chapter block" id="brief-chapter" data-chapter data-shot="sh01" data-shot-portrait="sh01v" data-label="SH-01" data-dim="0.55" data-busy>
+    <section class="chapter block" id="brief-chapter" data-chapter data-shot="sh01" data-shot-portrait="sh01v" data-label="Brief" data-dim="0.55" data-busy>
       <div class="page-hero" style="min-height:0;padding:4rem 0 3rem">
-        <p class="page-hero__index mono" data-scramble>05 / Contact</p>
+        <p class="page-hero__index mono">Contact</p>
         <h1 aria-label="Start the engine"><span data-split="chars">Start the</span> <em data-split="chars">engine.</em></h1>
-        <p data-reveal>Tell me what you're building. You'll get a fixed quote and a timeline within 24 hours, Monday to Saturday.</p>
+        <p data-reveal>Tell me what you're building. You'll get a fixed quote and a timeline within a working day.</p>
       </div>
 
       <div class="contact-grid">
         <form class="brief" id="brief" novalidate data-reveal>
           <div class="row2">
-            <div class="field"><label for="bName">Your name</label><input id="bName" name="name" autocomplete="name" required placeholder="Neha Kapoor" /></div>
-            <div class="field"><label for="bEmail">Email</label><input id="bEmail" name="email" type="email" autocomplete="email" required placeholder="neha@kaapi.co" /></div>
+            <div class="field"><label for="bName">Your name</label><input id="bName" name="name" autocomplete="name" required placeholder="Your name" /></div>
+            <div class="field"><label for="bEmail">Email</label><input id="bEmail" name="email" type="email" autocomplete="email" required placeholder="you@company.com" /></div>
           </div>
           <fieldset class="field">
             <legend>What are we building?</legend>
             <div class="chips">
-              <input type="radio" name="type" id="tSite" value="Launch site" checked /><label for="tSite">Launch site</label>
+              <input type="radio" name="type" id="tSite" value="Website" checked /><label for="tSite">Website</label>
               <input type="radio" name="type" id="tApp" value="Web app" /><label for="tApp">Web app</label>
               <input type="radio" name="type" id="tStore" value="Online store" /><label for="tStore">Online store</label>
               <input type="radio" name="type" id="tCare" value="Care plan" /><label for="tCare">Care plan</label>
@@ -26,10 +26,11 @@
             <div class="field">
               <label for="bBudget">Budget</label>
               <select id="bBudget" name="budget">
-                <option>₹25k – ₹60k</option>
-                <option selected>₹60k – ₹1.3L</option>
-                <option>₹1.3L – ₹3L</option>
-                <option>₹3L +</option>
+                <option>Under ₹25k / $300</option>
+                <option selected>₹25k–₹75k / $300–$900</option>
+                <option>₹75k–₹2L / $900–$2,400</option>
+                <option>₹2L+ / $2,400+</option>
+                <option>Not sure yet</option>
               </select>
             </div>
             <div class="field">
@@ -48,27 +49,27 @@
 
         <aside class="side-card" data-reveal>
           <dl>
-            <div><dt>Email</dt><dd><a href="mailto:hello@harsh.studio">hello@harsh.studio</a></dd></div>
-            <div><dt>Reply time</dt><dd>Within 24 hours, Mon–Sat</dd></div>
-            <div><dt>Based in</dt><dd>India · working worldwide</dd></div>
-            <div><dt>Availability</dt><dd>October: 2 of 3 slots open</dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:hello@lateapex.studio">hello@lateapex.studio</a></dd></div>
+            <div><dt>Reply time</dt><dd>Within a working day</dd></div>
+            <div><dt>Based in</dt><dd>Mumbai, India · clients anywhere</dd></div>
+            <div><dt>Elsewhere</dt><dd><a href="https://www.linkedin.com/in/harshit-chauhan-17a898364/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/harsh4k" target="_blank" rel="noopener">GitHub</a></dd></div>
           </dl>
-          <button class="btn btn--ghost" type="button" data-copy="hello@harsh.studio">Copy email</button>
+          <button class="btn btn--ghost" type="button" data-copy-email>Copy email</button>
         </aside>
       </div>
     </section>
 
     <!-- SH-07 Pass-by: set piece C -->
-    <section class="chapter chapter--pin passby" id="contact-cta" data-chapter data-shot="sh07" data-shot-portrait="sh07v" data-label="SH-07" data-piece="passby" data-pass="0.5" data-center data-busy style="--pin:220vh">
+    <section class="chapter chapter--pin passby" id="contact-cta" data-chapter data-shot="sh07" data-shot-portrait="sh07v" data-label="Call" data-piece="passby" data-pass="0.5" data-center data-busy style="--pin:220vh">
       <div class="pin-inner">
-        <p class="eyebrow mono">Rather talk?</p>
-        <h2 class="cta__title" aria-label="Let's go sideways.">
-          <span class="line">Let's go</span>
-          <span class="line line--brake" data-slam>sideways.</span>
+        <p class="eyebrow mono">Prefer a call?</p>
+        <h2 class="cta__title" aria-label="Rather talk it through?">
+          <span class="line">Rather talk</span>
+          <span class="line line--brake" data-slam>it through?</span>
         </h2>
-        <p class="body body--center">Book a free 20-minute call. No slides, no pitch: just your project and a straight answer on cost.</p>
+        <p class="body body--center">Book a free 20-minute call. No slides and no pitch: your project, and a straight answer on cost.</p>
         <div class="hero__actions hero__actions--center">
-          <a class="btn btn--brake btn--lg" href="mailto:hello@harsh.studio?subject=Intro%20call">Book a call</a>
+          <a class="btn btn--brake btn--lg" href="mailto:hello@lateapex.studio?subject=Intro%20call">Book a call</a>
         </div>
         <div class="wipe" aria-hidden="true"></div>
       </div>

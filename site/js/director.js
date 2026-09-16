@@ -231,8 +231,9 @@ window.Director = (function () {
     const cur = to && t > 0.5 ? to : from;
     return {
       velocity: (y - sy) / (vh / 48),
-      shot: cur.el.dataset.label || cur.shot,
+      shot: cur.el.dataset.label || "",
       frame: info.frame,
+      progress: position(cur, sy, vh).p,
     };
   }
 

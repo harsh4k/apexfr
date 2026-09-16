@@ -186,12 +186,13 @@ window.Interact = (function () {
       timer = setTimeout(() => toast.classList.remove("is-on"), 2200);
     };
     document.addEventListener("click", async (e) => {
-      const btn = e.target.closest("[data-copy]");
+      const btn = e.target.closest("[data-copy], [data-copy-email]");
       if (!btn) return;
+      const value = btn.dataset.copy || (window.BRAND && BRAND.email) || "";
       e.preventDefault();
       let msg = "Email copied — talk soon";
-      try { await navigator.clipboard.writeText(btn.dataset.copy); }
-      catch { msg = btn.dataset.copy; }
+      try { await navigator.clipboard.writeText(value); }
+      catch { msg = value; }
       showToast(msg);
     });
   }

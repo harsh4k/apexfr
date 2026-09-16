@@ -49,3 +49,14 @@ Verified 2026-09-16 16:31 against code `adfb63361387`.
   - viewports: mobile, desktop
   - states: default
   - 72 assertion(s) · 0 console error(s) · 0 failed request(s)
+
+## T4 — Brand: new name, SVG logo, favicon, de-slop
+
+Verified 2026-09-16 19:04 against code `54ff6915811d`.
+
+- **code** — PASS via `verify.mjs` · recorded 2026-09-16 19:02
+- **ui** — PASS via `playwright-script` · recorded 2026-09-16 19:04
+  - routes: /, /about.html, /contact.html, /licence.html, /pricing.html, /privacy.html, /refunds.html, /services.html, /terms.html, /work.html
+  - viewports: mobile, desktop
+  - states: default
+  - 120 assertion(s) · 0 console error(s) · 0 failed request(s)

@@ -83,8 +83,8 @@
 @media (hover: hover) { .stat:hover b { color: var(--brake); transform: scale(1.06); } }
 
 /* ---------- Logo slash spin ---------- */
-.nav__logo span { display: inline-block; transition: transform .6s var(--ease-out); }
-.nav__logo:hover span { transform: rotate(180deg) scale(1.2); }
+.nav__logo .mark__apex { transition: transform .6s var(--ease-out); transform-origin: 43.6px 31px; }
+.nav__logo:hover .mark__apex { transform: translate(4px, 7px) scale(1.15); }
 
 .stage-shade { box-shadow: inset 0 0 calc(var(--vel, 0) * 160px) calc(var(--vel, 0) * 40px) rgba(0,0,0,.6); }
 

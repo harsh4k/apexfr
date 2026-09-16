@@ -19,14 +19,6 @@
 }
 .tier:hover { transform: translateY(-6px); border-color: var(--line-strong); }
 .tier--hot { border-color: rgba(255,51,71,.55); box-shadow: 0 30px 80px -40px var(--brake-glow), inset 0 1px 0 rgba(255,255,255,.06); }
-.tier--hot::before {
-  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none;
-  background: conic-gradient(from var(--spin, 0deg), transparent 0 70%, var(--brake) 85%, transparent 100%);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
-  animation: spin 5s linear infinite;
-}
-@property --spin { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
-@keyframes spin { to { --spin: 360deg; } }
 .tier header span { font-size: .7rem; text-transform: uppercase; color: var(--sodium); }
 .tier--hot header span { color: var(--brake); }
 .tier h3 { margin: .4rem 0 0; font: 800 2.6rem/1 var(--f-display); text-transform: uppercase; }
@@ -72,6 +64,5 @@
   .care { margin-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .tier--hot::before { animation: none; }
   .cost__bar i { transform: none; }
 }

@@ -1,10 +1,11 @@
 /* Footer markup + behaviour (newsletter, local clock, back-to-top). */
 (function () {
+  const B = window.BRAND;
   const cols = [
-    ["Studio", [["Home", "index.html"], ["About", "about.html"], ["Open books", "about.html#numbers"], ["Work", "work.html"]]],
-    ["Services", [["Launch sites", "services.html"], ["Web apps", "services.html"], ["Online stores", "services.html"], ["Process", "services.html#process"]]],
-    ["Resources", [["Pricing", "pricing.html"], ["Cost breakdown", "pricing.html#cost"], ["FAQ", "pricing.html#cost-chapter"], ["Start a project", "contact.html"]]],
-    ["Elsewhere", [["GitHub", "https://github.com"], ["LinkedIn", "https://linkedin.com"], ["Instagram", "https://instagram.com"], ["Dribbble", "https://dribbble.com"]]],
+    ["Studio", [["Home", "index.html"], ["About", "about.html"], ["Work", "work.html"], ["Contact", "contact.html"]]],
+    ["Services", [["Websites", "services.html"], ["Web apps", "services.html"], ["Online stores", "services.html"], ["How it works", "services.html#process"]]],
+    ["Pricing", [["Plans", "pricing.html"], ["Estimate a project", "pricing.html#estimator"], ["Where the money goes", "pricing.html#cost"], ["FAQ", "pricing.html#faq"]]],
+    ["Elsewhere", [["GitHub", B.github], ["LinkedIn", B.linkedin], ["Portfolio", B.site]]],
   ];
 
   const colHtml = cols.map(([title, links]) => `
@@ -16,18 +17,18 @@
       }).join("")}</ul>
     </div>`).join("");
 
-  const word = "HARSH/STUDIO".split("").map((c, i) =>
-    `<span style="--i:${i}"${c === "/" ? ' class="slash"' : ""}>${c}</span>`).join("");
+  const word = [..."LATE APEX"].map((c, i) =>
+    `<span style="--i:${i}">${c === " " ? "&nbsp;" : c}</span>`).join("") + `<span class="slash" style="--i:9">.</span>`;
 
   const footer = document.getElementById("footer");
   footer.innerHTML = `
     <div class="footer__top">
       <div class="footer__pitch" data-reveal>
-        <h2>Got a project that<br>needs to <span>move?</span></h2>
-        <span class="status mono"><i></i>Booking October · 2 of 3 slots open</span>
+        <h2>Have something<br>worth <span>building?</span></h2>
+        <span class="status mono"><i></i>Taking new projects</span>
       </div>
       <form class="news" id="news" data-reveal novalidate>
-        <label for="newsEmail">Monthly pit notes — one email on speed, design and pricing. No spam.</label>
+        <label for="newsEmail">Occasional notes on building fast, honest websites. No spam, unsubscribe anytime.</label>
         <div class="news__field">
           <input id="newsEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
           <button class="btn btn--brake" type="submit">Subscribe</button>
@@ -38,16 +39,16 @@
     <div class="footer__grid">
       ${colHtml}
       <div class="footer__clock" data-reveal>
-        <span class="mono">Studio time · IST</span>
+        <span class="mono">${B.location} · IST</span>
         <b id="clock">--:--:--</b>
-        <span>Replies within 24 hours, Mon–Sat.<br><a href="mailto:hello@harsh.studio">hello@harsh.studio</a></span>
+        <span>Replies within a working day.<br><a href="mailto:${B.email}">${B.email}</a></span>
       </div>
     </div>
     <p class="wordmark" aria-hidden="true" data-cursor="Top ↑"><span class="wordmark__in">${word}</span></p>
     <div class="footer__bottom">
-      <span>© ${new Date().getFullYear()} Harsh Studio. Built by hand, no templates.</span>
-      <nav aria-label="Legal"><a href="pricing.html#cost-chapter">Payment terms</a><a href="contact.html">Privacy</a><a href="contact.html">Terms</a></nav>
-      <button class="to-top mono" id="toTop" type="button">Back to start ↑</button>
+      <span class="footer__sign">${B.mark(18)} © ${new Date().getFullYear()} ${B.name} · ${B.person}</span>
+      <nav aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refunds.html">Refunds</a><a href="licence.html">Licence</a></nav>
+      <button class="to-top mono" id="toTop" type="button">Back to top ↑</button>
     </div>`;
 
   // Newsletter: demo only — validates and confirms, sends nothing.

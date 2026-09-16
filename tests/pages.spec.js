@@ -14,7 +14,9 @@ for (const { file, name } of PAGES) {
       await expect(page.locator("h1")).toHaveCount(1);
       await expect(page.locator("#nav")).toBeVisible();
       await expect(page.locator("#footer .wordmark")).toHaveCount(1);
-      if (name !== "index") await expect(page.locator(`.nav__links a[aria-current="page"]`)).toHaveCount(1);
+      const legal = ["privacy", "terms", "refunds", "licence"].includes(name);
+      if (legal) await expect(page.locator(`.legal__others a[aria-current="page"]`)).toHaveCount(1);
+      else if (name !== "index") await expect(page.locator(`.nav__links a[aria-current="page"]`)).toHaveCount(1);
       await page.waitForTimeout(800);
       expect(problems, problems.join("\n")).toEqual([]);
     });

@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harsh Studio — Independent Web Studio</title>
-  <meta name="description" content="Harsh Studio is a one-person web studio building fast, hand-tuned websites and web apps. Transparent pricing, fixed scopes, no agency overhead." />
+  <title>Late Apex — Websites and web apps by Harshit Chauhan</title>
+  <meta name="description" content="Late Apex is Harshit Chauhan&#x27;s independent studio in Mumbai: fast, hand-built websites and web apps for clients in India and abroad, priced by pages and complexity." />
   <meta name="theme-color" content="#07080b" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2307080b%27/%3E%3Cpath d=%27M19 6 11 26h3l8-20z%27 fill=%27%23ff3347%27/%3E%3C/svg%3E" />
+  <meta property="og:title" content="Late Apex — Websites and web apps by Harshit Chauhan" />
+  <meta property="og:description" content="Late Apex is Harshit Chauhan&#x27;s independent studio in Mumbai: fast, hand-built websites and web apps for clients in India and abroad, priced by pages and complexity." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2307080b%27/%3E%3Cpath d=%27M14 52 L29 14%27 stroke=%27%23f2efe9%27 stroke-width=%277%27 stroke-linecap=%27round%27 fill=%27none%27/%3E%3Cpath d=%27M29 14 C36 13 41 23 44 32 S49 48 53 52%27 stroke=%27%23f2efe9%27 stroke-width=%277%27 stroke-linecap=%27round%27 fill=%27none%27/%3E%3Ccircle cx=%2743.6%27 cy=%2731%27 r=%275.5%27 fill=%27%23ff3347%27/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -17,94 +20,88 @@
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/interact.css" />
   <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/legal.css" />
 </head>
-<body data-page="home">
+<body data-page="index">
   <canvas id="stage" aria-hidden="true"></canvas>
   <div class="stage-shade" aria-hidden="true"></div>
 
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader__brand">HARSH<span>/</span>STUDIO</div>
+    <div class="loader__brand"><svg width="44" height="44" viewBox="0 0 64 64" fill="none"><path d="M10 54 L27 12" stroke="#f2efe9" stroke-width="6.5" stroke-linecap="round"/><path d="M27 12 C 35 11, 41 22, 44 32 S 50 50, 55 54" stroke="#f2efe9" stroke-width="6.5" stroke-linecap="round"/><circle cx="43.6" cy="31" r="5.2" fill="#ff3347"/></svg>Late Apex</div>
     <div class="loader__bar"><i id="loaderBar"></i></div>
-    <div class="loader__num mono">Warming up the tyres</div>
   </div>
 
   <main id="top">
-    <!-- SH-01 Ignition: pinned hero -->
-    <section class="chapter chapter--pin hero" id="hero" data-chapter data-shot="sh01" data-shot-portrait="sh01v" data-label="SH-01" data-focal="0.62" style="--pin:170vh">
+    <!-- SH-01: pinned hero -->
+    <section class="chapter chapter--pin hero" id="hero" data-chapter data-shot="sh01" data-shot-portrait="sh01v" data-label="Intro" data-focal="0.62" style="--pin:170vh">
       <div class="pin-inner">
         <div class="hero__inner">
-          <p class="kicker mono" data-scramble>Independent web studio — India / Remote</p>
+          <p class="kicker mono">Independent web studio · Mumbai</p>
           <h1 class="hero__title" aria-label="Built for speed. Tuned by hand.">
             <span class="line" data-split="chars">Built for</span>
             <span class="line line--outline" data-split="chars">speed.</span>
             <span class="line" data-split="chars">Tuned by <em>hand.</em></span>
           </h1>
-          <p class="hero__lede" data-reveal>I'm Harsh — one developer, zero account managers. I design and build websites that load before your visitor blinks, and I price them in the open.</p>
+          <p class="hero__lede" data-reveal>I'm Harshit, a full-stack developer. Late Apex is how I work with clients: one person designing and building fast websites and web apps, with prices you can see before we ever talk.</p>
           <div class="hero__actions" data-reveal>
-            <a class="btn btn--brake" href="pricing.html">See the prices</a>
-            <a class="btn btn--ghost" href="work.html">View the work</a>
+            <a class="btn btn--brake" href="pricing.html">See pricing</a>
+            <a class="btn btn--ghost" href="work.html">View work</a>
           </div>
         </div>
-        <div class="scroll-cue mono" aria-hidden="true"><span>Scroll to throttle</span><i></i></div>
+        <div class="scroll-cue mono" aria-hidden="true"><span>Scroll</span><i></i></div>
       </div>
     </section>
 
-    <!-- Original clip: studio intro -->
-    <section class="chapter scene about" id="studio" data-chapter data-shot="loop" data-mode="loop" data-label="LOOP" data-scene>
+    <!-- Original clip: the studio -->
+    <section class="chapter scene about" id="studio" data-chapter data-shot="loop" data-mode="loop" data-label="Studio" data-scene>
       <div class="col-right">
-        <p class="eyebrow mono" data-scramble>The driver</p>
-        <h2 class="display" data-split="words">A studio of one, built like a race team.</h2>
-        <p class="body" data-reveal>Big agencies put four people between you and the person writing your code. Here there's one: me. You talk to the builder, decisions happen in hours, and nothing gets lost in a handoff.</p>
+        <p class="eyebrow mono">The studio</p>
+        <h2 class="display" data-split="words">One developer. No hand-offs.</h2>
+        <p class="body" data-reveal>You talk to the person who writes the code. Decisions take hours, not meetings, and nothing gets lost between a sales team and a dev team, because there isn't one.</p>
         <div class="stats">
-          <div class="stat" data-reveal><b data-count="48">0</b><span>sites shipped</span></div>
-          <div class="stat" data-reveal><b data-count="97">0</b><span>avg. Lighthouse</span></div>
-          <div class="stat" data-reveal><b data-count="14">0</b><span>days, avg. launch</span></div>
-          <div class="stat" data-reveal><b data-count="4.9" data-decimals="1">0</b><span>client rating</span></div>
+          <div class="stat" data-reveal><b data-count="3">0</b><span>client sites live</span></div>
+          <div class="stat" data-reveal><b data-count="14">0</b><span>public repositories</span></div>
+          <div class="stat" data-reveal><b data-count="1">0</b><span>point of contact</span></div>
+          <div class="stat" data-reveal><b data-count="24" data-suffix="h">0</b><span>reply time, max</span></div>
         </div>
-        <p data-reveal><a class="link-arrow" href="about.html">The full story <span aria-hidden="true">→</span></a></p>
+        <p data-reveal><a class="link-arrow" href="about.html">About Harshit <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
-    <!-- SH-06 Chase cam: where to next -->
-    <section class="chapter scene" id="routes" data-chapter data-shot="sh06" data-label="SH-06" data-scene>
+    <!-- SH-06: where to next -->
+    <section class="chapter scene" id="routes" data-chapter data-shot="sh06" data-label="Explore" data-scene>
       <div class="col-right col-right--wide">
-        <p class="eyebrow mono" data-scramble>Pick a line</p>
-        <h2 class="display" data-split="words">Everything you need to decide, on three pages.</h2>
+        <p class="eyebrow mono">Where to next</p>
+        <h2 class="display" data-split="words">What I build, what it costs, who it's for.</h2>
         <nav class="routes" aria-label="Explore">
-          <a class="route" href="services.html" data-reveal><b>Services</b><span>What I build, and the 14-day process behind it.</span><i aria-hidden="true">↗</i></a>
-          <a class="route" href="work.html" data-reveal><b>Work</b><span>Recent launches and the numbers they moved.</span><i aria-hidden="true">↗</i></a>
-          <a class="route" href="pricing.html" data-reveal><b>Pricing</b><span>Fixed prices, the cost split, and the FAQ.</span><i aria-hidden="true">↗</i></a>
+          <a class="route" href="services.html" data-reveal><b>Services</b><span>Websites, web apps, stores and care, and the two-week process behind them.</span><i aria-hidden="true">↗</i></a>
+          <a class="route" href="work.html" data-reveal><b>Work</b><span>Synapical, Coffee Digital, Velsaro and open-source projects.</span><i aria-hidden="true">↗</i></a>
+          <a class="route" href="pricing.html" data-reveal><b>Pricing</b><span>Priced by pages and complexity. Estimate yours in a minute.</span><i aria-hidden="true">↗</i></a>
         </nav>
       </div>
     </section>
 
-    <section class="voices" id="voices" aria-label="Client notes">
+    <section class="voices" id="capabilities" aria-label="What I build">
       <div class="marquee" data-reveal data-cursor="Pause">
         <div class="marquee__track">
-          <span>“Launched in 11 days. Our old agency quoted 3 months.” — Neha, Kaapi Co.</span>
-          <span>“The only dev who replied on a Sunday.” — Arjun, Fieldnote</span>
-          <span>“Bookings up 2.4× in the first month.” — Dr. Mehra Clinic</span>
-          <span>“Clear price, zero surprises.” — Rohan, Northpeak</span>
-          <span>“Launched in 11 days. Our old agency quoted 3 months.” — Neha, Kaapi Co.</span>
-          <span>“The only dev who replied on a Sunday.” — Arjun, Fieldnote</span>
-          <span>“Bookings up 2.4× in the first month.” — Dr. Mehra Clinic</span>
-          <span>“Clear price, zero surprises.” — Rohan, Northpeak</span>
+          <span>Marketing sites</span><span>Web apps</span><span>Online stores</span><span>Dashboards</span><span>Landing pages</span><span>Scroll-driven sites</span><span>Speed fixes</span>
+          <span>Marketing sites</span><span>Web apps</span><span>Online stores</span><span>Dashboards</span><span>Landing pages</span><span>Scroll-driven sites</span><span>Speed fixes</span>
         </div>
       </div>
     </section>
 
-    <!-- SH-07 Pass-by: set piece C -->
-    <section class="chapter chapter--pin passby" id="contact-cta" data-chapter data-shot="sh07" data-shot-portrait="sh07v" data-label="SH-07" data-piece="passby" data-pass="0.5" data-center data-busy style="--pin:230vh">
+    <!-- SH-07: pass-by into the footer -->
+    <section class="chapter chapter--pin passby" id="contact-cta" data-chapter data-shot="sh07" data-shot-portrait="sh07v" data-label="Contact" data-piece="passby" data-pass="0.5" data-center data-busy style="--pin:230vh">
       <div class="pin-inner">
-        <p class="eyebrow mono">Lights out</p>
+        <p class="eyebrow mono">Start a project</p>
         <h2 class="cta__title" aria-label="Let's go sideways.">
           <span class="line">Let's go</span>
           <span class="line line--brake" data-slam>sideways.</span>
         </h2>
-        <p class="body body--center">Two slots open for October. Tell me what you're building and I'll reply with a fixed quote within 24 hours.</p>
+        <p class="body body--center">Tell me what you're building. You'll get a fixed quote and a timeline within a working day.</p>
         <div class="hero__actions hero__actions--center">
-          <a class="btn btn--brake btn--lg" href="contact.html">Start a project</a>
-          <button class="btn btn--ghost btn--lg" type="button" data-copy="hello@harsh.studio">Copy email</button>
+          <a class="btn btn--brake btn--lg" href="contact.html">Send a brief</a>
+          <button class="btn btn--ghost btn--lg" type="button" data-copy-email>Copy email</button>
         </div>
         <div class="wipe" aria-hidden="true"></div>
       </div>
@@ -113,6 +110,7 @@
 
   <footer class="footer" id="footer"></footer>
 
+  <script src="js/brand.js"></script>
   <script src="js/shots.js"></script>
   <script src="js/director.js"></script>
   <script src="js/motion.js"></script>

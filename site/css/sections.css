@@ -30,7 +30,7 @@
 .hero .kicker { justify-content: flex-end; }
 .hero__title {
   margin: 0 0 1.75rem;
-  font: 900 clamp(3.6rem, 10.5vw, 10rem)/.84 var(--f-display);
+  font: 900 clamp(3rem, min(10.5vw, 14.5vh), 10rem)/.86 var(--f-display);
   text-transform: uppercase; letter-spacing: -.01em;
 }
 .hero__title .line { display: block; }
@@ -120,7 +120,7 @@
 /* ---------- CTA ---------- */
 .cta { flex-direction: column; justify-content: center; text-align: center; }
 .cta .eyebrow { justify-content: center; }
-.cta__title { margin: 0 0 2rem; font: 900 clamp(4rem, 14vw, 13rem)/.82 var(--f-display); text-transform: uppercase; }
+.cta__title { margin: 0 0 2rem; font: 900 clamp(3.4rem, min(14vw, 22vh), 13rem)/.84 var(--f-display); text-transform: uppercase; }
 .cta__title .line { display: block; }
 .line--brake { color: var(--brake); filter: drop-shadow(0 0 36px var(--brake-glow)); }
 

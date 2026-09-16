@@ -1,0 +1,29 @@
+/* Legal pages: a calm reading layout over a heavily dimmed backdrop. */
+.legal-hero { min-height: 52vh; }
+.legal-hero h1 { font-size: clamp(3rem, 8vw, 7rem); }
+.legal__others { display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .9rem; }
+.legal__others a { color: var(--paper-dim); text-decoration: none; border-bottom: 1px solid transparent; }
+.legal__others a[aria-current="page"] { color: var(--paper); border-color: var(--brake); }
+.legal-wrap {
+  position: relative; display: grid; grid-template-columns: 15rem minmax(0, 44rem); gap: 4rem; justify-content: center;
+  padding: 3rem var(--gutter) 8rem; background: linear-gradient(180deg, rgba(7,8,11,.6), var(--ink) 20rem);
+}
+.legal__toc { position: sticky; top: 6rem; align-self: start; font-size: .85rem; }
+.legal__toc .mono { margin: 0 0 .8rem; font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; color: var(--paper-faint); }
+.legal__toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.legal__toc a { color: var(--paper-dim); text-decoration: none; transition: color .25s; }
+.legal__toc a:hover { color: var(--paper); }
+.legal { color: var(--paper-dim); font-size: 1rem; line-height: 1.75; }
+.legal section { padding-block: 1.6rem; border-top: 1px solid var(--line); scroll-margin-top: 6rem; }
+.legal h2 { margin: 0 0 .9rem; color: var(--paper); font: 700 1.6rem/1.15 var(--f-display); text-transform: uppercase; letter-spacing: .01em; }
+.legal h3 { margin: 1.2rem 0 .4rem; color: var(--paper); font-size: 1rem; }
+.legal p { margin: 0 0 1rem; }
+.legal ul, .legal ol { margin: 0 0 1rem; padding-left: 1.2rem; display: grid; gap: .35rem; }
+.legal strong { color: var(--paper); font-weight: 600; }
+.legal a { color: var(--paper); }
+.legal__note { padding: 1rem 1.2rem; border-left: 2px solid var(--sodium); background: rgba(255,177,74,.07); color: var(--paper); font-size: .92rem; }
+.legal__updated { font-family: var(--f-mono); font-size: .75rem; color: var(--paper-faint); }
+@media (max-width: 900px) {
+  .legal-wrap { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .legal__toc { position: static; }
+}

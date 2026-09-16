@@ -2,7 +2,7 @@
   "schema": 1,
   "project": "Late Apex site",
   "created": "2026-09-16T15:36:22.044Z",
-  "updated": "2026-09-16T16:31:15.683Z",
+  "updated": "2026-09-16T19:04:27.979Z",
   "phase": "Phase 2 — polish, real content, legal",
   "active": null,
   "tasks": [
@@ -197,21 +197,72 @@
     {
       "id": "T4",
       "title": "Brand: new name, SVG logo, favicon, de-slop",
-      "state": "TODO",
+      "state": "DONE",
       "deps": [
         "T1"
       ],
-      "attempts": 0,
-      "evidence": {},
-      "notes": [],
-      "started": null,
-      "finished": null,
-      "blockedReason": null
+      "attempts": 1,
+      "evidence": {
+        "code": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:02:35.114Z",
+          "codeHash": "54ff6915811d58c5cae98a2179117039ef07b546c7f0a41b7208a5cf85136d1f"
+        },
+        "runtime": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:02:36.424Z",
+          "codeHash": "54ff6915811d58c5cae98a2179117039ef07b546c7f0a41b7208a5cf85136d1f"
+        },
+        "ui": {
+          "verdict": "PASS",
+          "recorded": "2026-09-16T19:04:27.471Z",
+          "codeHash": "54ff6915811d58c5cae98a2179117039ef07b546c7f0a41b7208a5cf85136d1f",
+          "coverage": {
+            "routes": [
+              "/",
+              "/about.html",
+              "/contact.html",
+              "/licence.html",
+              "/pricing.html",
+              "/privacy.html",
+              "/refunds.html",
+              "/services.html",
+              "/terms.html",
+              "/work.html"
+            ],
+            "viewports": [
+              "mobile",
+              "desktop"
+            ],
+            "states": [
+              "default"
+            ],
+            "checks": 20,
+            "consoleErrors": 0,
+            "failedRequests": 0
+          }
+        }
+      },
+      "notes": [
+        {
+          "ts": "2026-09-16T18:59:13.901Z",
+          "text": "Pricing page copy still uses the old Stage/Pit-crew wording; rewritten in T7. Legal pages built early in T4 because the new footer links to them; T8 finalises them."
+        }
+      ],
+      "started": "2026-09-16T16:31:51.313Z",
+      "finished": "2026-09-16T19:04:27.976Z",
+      "blockedReason": null,
+      "base": "a4b8157f89d0b2f5a1e3f46ea0086a74e23f4574",
+      "recovery": {
+        "round": 0,
+        "failures": [],
+        "stop": null
+      }
     },
     {
       "id": "T5",
       "title": "UI glitches: hero clipping, responsive type, overlaps",
-      "state": "WAITING",
+      "state": "TODO",
       "deps": [
         "T3",
         "T4"
@@ -226,7 +277,7 @@
     {
       "id": "T6",
       "title": "Real work + profile data",
-      "state": "WAITING",
+      "state": "TODO",
       "deps": [
         "T4"
       ],
@@ -240,7 +291,7 @@
     {
       "id": "T7",
       "title": "Pricing: complexity x pages model + estimator",
-      "state": "WAITING",
+      "state": "TODO",
       "deps": [
         "T4"
       ],
@@ -254,7 +305,7 @@
     {
       "id": "T8",
       "title": "Legal pages: privacy, terms, refunds, licence",
-      "state": "WAITING",
+      "state": "TODO",
       "deps": [
         "T4"
       ],
@@ -441,6 +492,36 @@
       "ts": "2026-09-16T16:31:15.683Z",
       "event": "done",
       "detail": "T3 (code:PASS ui:PASS)"
+    },
+    {
+      "ts": "2026-09-16T16:31:51.314Z",
+      "event": "start",
+      "detail": "T4 (attempt 1, checkpoint clean tree)"
+    },
+    {
+      "ts": "2026-09-16T18:59:13.901Z",
+      "event": "note",
+      "detail": "T4: Pricing page copy still uses the old Stage/Pit-crew wording;"
+    },
+    {
+      "ts": "2026-09-16T19:02:35.144Z",
+      "event": "evidence",
+      "detail": "T4/code PASS"
+    },
+    {
+      "ts": "2026-09-16T19:02:36.450Z",
+      "event": "evidence",
+      "detail": "T4/runtime PASS"
+    },
+    {
+      "ts": "2026-09-16T19:04:27.497Z",
+      "event": "evidence",
+      "detail": "T4/ui PASS"
+    },
+    {
+      "ts": "2026-09-16T19:04:27.979Z",
+      "event": "done",
+      "detail": "T4 (code:PASS ui:PASS)"
     }
   ]
 }
