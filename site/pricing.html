@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing — Harsh Studio</title>
+  <meta name="description" content="Fixed, public prices for websites and web apps, with a full cost breakdown." />
+  <meta name="theme-color" content="#07080b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2307080b%27/%3E%3Cpath d=%27M19 6 11 26h3l8-20z%27 fill=%27%23ff3347%27/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/pricing.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/interact.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body data-page="pricing">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="stage-shade" aria-hidden="true"></div>
+
+  <main id="top">
+    <!-- script: pricing.js -->
+    <!-- SH-05 Overhead circle: the price board -->
+    <section class="chapter pricing block" id="pricing" data-chapter data-shot="sh05" data-label="SH-05" data-dim="0.6" data-busy>
+      <div class="page-hero" style="min-height:0;padding:4rem 0 1rem">
+        <p class="page-hero__index mono" data-scramble>03 / Pricing</p>
+        <h1 aria-label="Fixed prices"><span data-split="chars">Fixed</span> <em data-split="chars">prices.</em></h1>
+      </div>
+      <div class="pricing__head">
+        <p class="body" data-reveal>Printed in public, so you can budget before we ever talk. Every plan is a fixed quote; the scope is agreed in writing before work starts.</p>
+        <div class="toggle" role="group" aria-label="Currency">
+          <button class="is-on" type="button" data-cur="inr" aria-pressed="true">₹ INR</button>
+          <button type="button" data-cur="usd" aria-pressed="false">$ USD</button>
+        </div>
+      </div>
+      <div class="tiers">
+        <article class="tier" data-reveal>
+          <header><span class="mono">Stage 1</span><h3>Starter</h3></header>
+          <p class="tier__price"><b data-inr="24,999" data-usd="349">24,999</b><small>one-time</small></p>
+          <p class="tier__for">For a new business that needs to look real online, fast.</p>
+          <ul><li>Up to 5 pages</li><li>Mobile-first design</li><li>Contact form + WhatsApp</li><li>Basic SEO &amp; analytics</li><li>7-day delivery</li></ul>
+          <a class="btn btn--ghost" href="contact.html">Start Stage 1</a>
+        </article>
+        <article class="tier tier--hot" data-reveal>
+          <header><span class="mono">Stage 2 · Most booked</span><h3>Growth</h3></header>
+          <p class="tier__price"><b data-inr="59,999" data-usd="799">59,999</b><small>one-time</small></p>
+          <p class="tier__for">For brands that want the site to actually sell.</p>
+          <ul><li>Up to 12 pages + blog</li><li>Custom motion &amp; scroll story</li><li>CMS you can edit yourself</li><li>Payments or booking</li><li>Full SEO setup</li><li>14-day delivery</li></ul>
+          <a class="btn btn--brake" href="contact.html">Start Stage 2</a>
+        </article>
+        <article class="tier" data-reveal>
+          <header><span class="mono">Stage 3</span><h3>Full build</h3></header>
+          <p class="tier__price"><span class="from">from</span><b data-inr="1,29,999" data-usd="1,690">1,29,999</b><small>scoped</small></p>
+          <p class="tier__for">Web apps, stores and anything with logins.</p>
+          <ul><li>Login, database, roles</li><li>Admin dashboard</li><li>Store or SaaS billing</li><li>Integrations &amp; APIs</li><li>Milestone payments</li></ul>
+          <a class="btn btn--ghost" href="contact.html">Scope a build</a>
+        </article>
+      </div>
+      <p class="care mono" data-reveal style="margin-top:2rem">+ Pit crew care plan — <b data-inr="3,999" data-usd="59">3,999</b>/month · cancel anytime</p>
+    </section>
+
+    <!-- Original clip: cost split + FAQ -->
+    <section class="chapter block" id="cost-chapter" data-chapter data-shot="loop" data-mode="loop" data-label="LOOP" data-dim="0.5" data-busy>
+      <div class="cost" id="cost">
+        <div class="cost__copy">
+          <h2 class="display display--sm" data-split="words">Where your money actually goes.</h2>
+          <p class="body" data-reveal>Take the Growth plan. Roughly 60 working hours go into it. Here's the split, so you can see nothing is padding.</p>
+        </div>
+        <div class="cost__chart" data-reveal>
+          <div class="cost__bar" role="img" aria-label="Cost split: design 28 percent, build 42 percent, testing and performance 16 percent, launch and handover 14 percent">
+            <i style="--w:28%" class="c1"></i><i style="--w:42%" class="c2"></i><i style="--w:16%" class="c3"></i><i style="--w:14%" class="c4"></i>
+          </div>
+          <dl class="cost__legend">
+            <div><dt class="c1">Design</dt><dd>28% · 17 hrs</dd></div>
+            <div><dt class="c2">Build</dt><dd>42% · 25 hrs</dd></div>
+            <div><dt class="c3">Testing &amp; speed</dt><dd>16% · 10 hrs</dd></div>
+            <div><dt class="c4">Launch &amp; handover</dt><dd>14% · 8 hrs</dd></div>
+          </dl>
+          <p class="cost__note mono">Effective rate ≈ ₹1,000/hr. Hosting, domains and paid plugins are billed at cost, with no markup.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:6rem">
+        <p class="eyebrow mono" data-scramble>Pit questions</p>
+        <h2 class="display" data-split="words">Before you ask.</h2>
+        <div class="faq" data-reveal>
+          <details><summary>How do payments work?</summary><p>50% to start, 50% at launch. Full builds are split into milestones, each paid only after you approve it on the preview link.</p></details>
+          <details><summary>What if I need more than the plan covers?</summary><p>You get a written quote for the extra before any of it is built. Nothing is added to an invoice without your yes.</p></details>
+          <details><summary>Do I pay for hosting?</summary><p>Yes, directly to the provider, at cost. Most sites run on free or ₹0–1,500/month tiers; I'll tell you which before we start.</p></details>
+          <details><summary>Can you work with my designer?</summary><p>Yes. Send the Figma file and I'll quote the build only, usually 30–40% less than the full plan.</p></details>
+          <details><summary>What happens after the 30-day warranty?</summary><p>Either the Pit crew care plan, or pay-as-you-go changes at ₹1,000/hr. You're never locked in.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <script src="js/shots.js"></script>
+  <script src="js/director.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/interact.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/pieces.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/chrome.js"></script>
+</body>
+</html>

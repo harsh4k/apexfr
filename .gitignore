@@ -1,0 +1,15 @@
+node_modules/
+.playwright-mcp/
+test-results/
+playwright-report/
+.tools/
+.work/shots/
+.work/tmp_*/
+.work/ref/
+.work/clean/
+.work/old-index.html
+# Large binary inputs and generated frame sets (see DECISIONS.md)
+*.mp4
+*.zip
+site/frames/
+.env*

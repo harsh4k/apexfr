@@ -1,0 +1,13 @@
+{
+  "name": "late-apex-site",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Scroll-driven freelance studio site (static HTML/CSS/JS).",
+  "type": "module",
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "lint": "node scripts/lint.mjs",
+    "test": "playwright test",
+    "test:update": "playwright test --update-snapshots"
+  }
+}

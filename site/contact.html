@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Harsh Studio</title>
+  <meta name="description" content="Send a project brief and get a fixed quote within 24 hours." />
+  <meta name="theme-color" content="#07080b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2307080b%27/%3E%3Cpath d=%27M19 6 11 26h3l8-20z%27 fill=%27%23ff3347%27/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/pricing.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/interact.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body data-page="contact">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="stage-shade" aria-hidden="true"></div>
+
+  <main id="top">
+    <!-- script: contact.js -->
+    <!-- SH-01 Ignition, dimmed: the brief -->
+    <section class="chapter block" id="brief-chapter" data-chapter data-shot="sh01" data-shot-portrait="sh01v" data-label="SH-01" data-dim="0.55" data-busy>
+      <div class="page-hero" style="min-height:0;padding:4rem 0 3rem">
+        <p class="page-hero__index mono" data-scramble>05 / Contact</p>
+        <h1 aria-label="Start the engine"><span data-split="chars">Start the</span> <em data-split="chars">engine.</em></h1>
+        <p data-reveal>Tell me what you're building. You'll get a fixed quote and a timeline within 24 hours, Monday to Saturday.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="brief" id="brief" novalidate data-reveal>
+          <div class="row2">
+            <div class="field"><label for="bName">Your name</label><input id="bName" name="name" autocomplete="name" required placeholder="Neha Kapoor" /></div>
+            <div class="field"><label for="bEmail">Email</label><input id="bEmail" name="email" type="email" autocomplete="email" required placeholder="neha@kaapi.co" /></div>
+          </div>
+          <fieldset class="field">
+            <legend>What are we building?</legend>
+            <div class="chips">
+              <input type="radio" name="type" id="tSite" value="Launch site" checked /><label for="tSite">Launch site</label>
+              <input type="radio" name="type" id="tApp" value="Web app" /><label for="tApp">Web app</label>
+              <input type="radio" name="type" id="tStore" value="Online store" /><label for="tStore">Online store</label>
+              <input type="radio" name="type" id="tCare" value="Care plan" /><label for="tCare">Care plan</label>
+            </div>
+          </fieldset>
+          <div class="row2">
+            <div class="field">
+              <label for="bBudget">Budget</label>
+              <select id="bBudget" name="budget">
+                <option>₹25k – ₹60k</option>
+                <option selected>₹60k – ₹1.3L</option>
+                <option>₹1.3L – ₹3L</option>
+                <option>₹3L +</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="bWhen">Launch by</label>
+              <select id="bWhen" name="when">
+                <option>This month</option>
+                <option selected>Within 2 months</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="bMsg">The project, in a few lines</label><textarea id="bMsg" name="message" required placeholder="What it is, who it's for, and what a win looks like."></textarea></div>
+          <button class="btn btn--brake btn--lg" type="submit">Send the brief</button>
+          <p class="brief__msg" id="briefMsg" role="status"></p>
+        </form>
+
+        <aside class="side-card" data-reveal>
+          <dl>
+            <div><dt>Email</dt><dd><a href="mailto:hello@harsh.studio">hello@harsh.studio</a></dd></div>
+            <div><dt>Reply time</dt><dd>Within 24 hours, Mon–Sat</dd></div>
+            <div><dt>Based in</dt><dd>India · working worldwide</dd></div>
+            <div><dt>Availability</dt><dd>October: 2 of 3 slots open</dd></div>
+          </dl>
+          <button class="btn btn--ghost" type="button" data-copy="hello@harsh.studio">Copy email</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SH-07 Pass-by: set piece C -->
+    <section class="chapter chapter--pin passby" id="contact-cta" data-chapter data-shot="sh07" data-shot-portrait="sh07v" data-label="SH-07" data-piece="passby" data-pass="0.5" data-center style="--pin:220vh">
+      <div class="pin-inner">
+        <p class="eyebrow mono">Rather talk?</p>
+        <h2 class="cta__title" aria-label="Let's go sideways.">
+          <span class="line">Let's go</span>
+          <span class="line line--brake" data-slam>sideways.</span>
+        </h2>
+        <p class="body body--center">Book a free 20-minute call. No slides, no pitch: just your project and a straight answer on cost.</p>
+        <div class="hero__actions hero__actions--center">
+          <a class="btn btn--brake btn--lg" href="mailto:hello@harsh.studio?subject=Intro%20call">Book a call</a>
+        </div>
+        <div class="wipe" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <script src="js/shots.js"></script>
+  <script src="js/director.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/interact.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/pieces.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/chrome.js"></script>
+</body>
+</html>

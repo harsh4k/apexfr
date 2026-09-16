@@ -1,0 +1,1 @@
+[0:v]delogo=x=1072:y=20:w=190:h=72,split[b][p];[p]crop=240:116:1040:0,gblur=sigma=7,format=yuva444p,geq=lum='lum(X,Y)':cb='cb(X,Y)':cr='cr(X,Y)':a='255*clip(min(min(X,W-1-X),H-1-Y)/22,0,1)'[pp];[b][pp]overlay=1040:0,format=rgb24

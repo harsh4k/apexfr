@@ -1,0 +1,120 @@
+/* Micro-interactions: cursor, magnetic buttons, label roll, ripples,
+   card spotlight + tilt, toast, velocity skew. */
+
+/* ---------- Cursor (fine pointers only; JS adds .has-cursor) ---------- */
+.cursor, .cursor-ring { position: fixed; left: 0; top: 0; z-index: 200; pointer-events: none; border-radius: 50%; opacity: 0; transition: opacity .3s; }
+.has-cursor .cursor, .has-cursor .cursor-ring { opacity: 1; }
+.cursor { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--brake); box-shadow: 0 0 10px var(--brake-glow); }
+.cursor-ring {
+  width: 38px; height: 38px; margin: -19px 0 0 -19px;
+  border: 1px solid rgba(242,239,233,.45);
+  display: grid; place-items: center;
+  transition: opacity .3s, width .45s var(--ease-out), height .45s var(--ease-out), margin .45s var(--ease-out), background .35s, border-color .35s;
+}
+.cursor-ring span { font: 500 .62rem/1 var(--f-mono); text-transform: uppercase; letter-spacing: .12em; color: var(--ink); opacity: 0; transform: scale(.6); transition: opacity .3s, transform .45s var(--ease-out); }
+.cursor-ring.is-hover { width: 64px; height: 64px; margin: -32px 0 0 -32px; border-color: transparent; background: rgba(255,51,71,.16); backdrop-filter: blur(2px); }
+.cursor-ring.is-label { width: 86px; height: 86px; margin: -43px 0 0 -43px; background: var(--paper); border-color: var(--paper); }
+.cursor-ring.is-label span { opacity: 1; transform: none; }
+.cursor-ring.is-down { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+.cursor-ring.is-text { width: 2px; height: 28px; margin: -14px 0 0 -1px; border-radius: 2px; background: var(--paper); border-color: transparent; }
+.cursor-ring.is-hidden, .cursor.is-hidden { opacity: 0 !important; }
+@media (pointer: fine) {
+  .has-cursor, .has-cursor a, .has-cursor button { cursor: none; }
+  .has-cursor input { cursor: none; }
+}
+
+/* ---------- Magnetic ---------- */
+[data-magnetic] { transition: transform .5s var(--ease-out), box-shadow .4s, border-color .3s, color .3s; }
+[data-magnetic].is-magnet { transition: transform .12s linear, box-shadow .4s, border-color .3s, color .3s; }
+
+/* ---------- Button label roll ---------- */
+.roll { position: relative; display: inline-block; overflow: hidden; line-height: 1.15; vertical-align: middle; }
+.roll > span { display: inline-block; transition: transform .55s var(--ease-out); }
+.roll > span::after { content: attr(data-t); position: absolute; left: 0; top: 100%; }
+.btn:hover .roll > span, .to-top:hover .roll > span { transform: translateY(-100%); }
+.btn .arrow { display: inline-block; transition: transform .5s var(--ease-out); }
+.btn:hover .arrow { transform: translate(3px, -3px) rotate(0deg); }
+
+/* ---------- Ripple ---------- */
+.ripple {
+  position: absolute; z-index: -1; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%;
+  background: rgba(255,255,255,.55); pointer-events: none;
+  animation: ripple .7s var(--ease-out) forwards;
+}
+@keyframes ripple { to { transform: scale(30); opacity: 0; } }
+
+/* ---------- Spotlight cards ---------- */
+[data-spot] { --mx: 50%; --my: 50%; --spot: 0; }
+[data-spot] > .spot {
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
+  background: radial-gradient(420px circle at var(--mx) var(--my), rgba(255,51,71,.14), transparent 45%),
+              radial-gradient(220px circle at var(--mx) var(--my), rgba(242,239,233,.07), transparent 60%);
+  opacity: var(--spot); transition: opacity .4s;
+}
+[data-spot] > :not(.spot) { position: relative; z-index: 1; }
+.tier[data-state="in"]:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px); }
+.tier.is-tilting { transition: transform .15s linear, border-color .4s, box-shadow .6s; }
+
+/* ---------- Services: arrow + index slide ---------- */
+.svc__item::after {
+  content: "↗"; position: absolute; right: .5rem; top: 50%; translate: 0 -50%;
+  font-size: 1.6rem; color: var(--brake); opacity: 0; transform: translate(-12px, 12px);
+  transition: opacity .35s, transform .5s var(--ease-out);
+}
+@media (hover: hover) { .svc__item:hover::after { opacity: 1; transform: none; } }
+.svc__item .svc__tag { transition: opacity .3s, transform .5s var(--ease-out); }
+@media (hover: hover) { .svc__item:hover .svc__tag { opacity: 0; transform: translateX(-10px); } }
+.svc__item .svc__no { transition: color .3s, transform .5s var(--ease-out); display: inline-block; }
+@media (hover: hover) { .svc__item:hover .svc__no { transform: scale(1.5); } }
+
+/* ---------- Toggle pill slides ---------- */
+.toggle { position: relative; }
+.toggle::before {
+  content: ""; position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px);
+  border-radius: 99px; background: var(--paper);
+  transition: transform .5s var(--ease-out);
+}
+.pricing[data-cur="usd"] .toggle::before { transform: translateX(100%); }
+.toggle button { position: relative; flex: 1; white-space: nowrap; }
+.toggle button.is-on { background: none; }
+
+/* ---------- Stats hover ---------- */
+.stat b { transition: color .3s, transform .5s var(--ease-out); transform-origin: left bottom; }
+@media (hover: hover) { .stat:hover b { color: var(--brake); transform: scale(1.06); } }
+
+/* ---------- Logo slash spin ---------- */
+.nav__logo span { display: inline-block; transition: transform .6s var(--ease-out); }
+.nav__logo:hover span { transform: rotate(180deg) scale(1.2); }
+
+/* ---------- Velocity skew on big type ---------- */
+.display, .cta__title, .hero__title { transform: skewY(var(--skew, 0deg)); transform-origin: left center; }
+.stage-shade { box-shadow: inset 0 0 calc(var(--vel, 0) * 160px) calc(var(--vel, 0) * 40px) rgba(0,0,0,.6); }
+
+/* ---------- Copy chip + toast ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: 2rem; z-index: 150;
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .75rem 1.1rem; border-radius: 99px;
+  background: var(--paper); color: var(--ink); font: 600 .85rem/1 var(--f-body);
+  box-shadow: 0 20px 60px -20px rgba(0,0,0,.8);
+  transform: translate(-50%, calc(100% + 3rem)); visibility: hidden;
+  transition: transform .6s var(--ease-out), visibility 0s .6s;
+}
+.toast.is-on { transform: translate(-50%, 0); visibility: visible; transition: transform .6s var(--ease-out), visibility 0s; }
+.toast i { width: 18px; height: 18px; border-radius: 50%; background: var(--brake); display: grid; place-items: center; color: var(--paper); font-style: normal; font-size: .7rem; }
+
+/* ---------- Hero pointer depth ---------- */
+.hero__title .line { transition: translate .8s var(--ease-out); translate: calc(var(--hx, 0) * var(--depth, 0) * 1px) calc(var(--hy, 0) * var(--depth, 0) * 1px); }
+.hero__title .line:nth-child(1) { --depth: 10; }
+.hero__title .line:nth-child(2) { --depth: 22; }
+.hero__title .line:nth-child(3) { --depth: 14; }
+
+/* ---------- Loader exit: curtain ---------- */
+.loader { clip-path: inset(0 0 0 0); transition: clip-path 1.1s var(--ease-in-out), visibility 1.1s; }
+.loader.is-done { opacity: 1; clip-path: inset(0 0 100% 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .display, .cta__title, .hero__title { transform: none; }
+  .hero__title .line { translate: none; }
+  .tier[data-state="in"]:hover { transform: none; }
+}

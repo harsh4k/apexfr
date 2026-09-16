@@ -1,0 +1,31 @@
+/* Design tokens — pulled from the footage: wet asphalt, white bodywork,
+   tail-light red and sodium street lamps. */
+:root {
+  --ink: #07080b;
+  --ink-2: #0d0f14;
+  --ink-3: #151821;
+  --paper: #f2efe9;
+  --paper-dim: rgba(242, 239, 233, 0.66);
+  --paper-faint: rgba(242, 239, 233, 0.4);
+  --line: rgba(242, 239, 233, 0.14);
+  --line-strong: rgba(242, 239, 233, 0.28);
+  --brake: #ff3347;
+  --brake-deep: #c3122a;
+  --brake-glow: rgba(255, 51, 71, 0.45);
+  --sodium: #ffb14a;
+  --lane: #e8c24a;
+  --steel: #8fa3c0;
+
+  --glass: rgba(9, 10, 14, 0.62);
+  --glass-strong: rgba(9, 10, 14, 0.82);
+
+  --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+  --f-body: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --radius: 14px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur: 0.9s;
+}

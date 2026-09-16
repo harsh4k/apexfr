@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harsh Studio — Independent Web Studio</title>
+  <meta name="description" content="Harsh Studio is a one-person web studio building fast, hand-tuned websites and web apps. Transparent pricing, fixed scopes, no agency overhead." />
+  <meta name="theme-color" content="#07080b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%2307080b%27/%3E%3Cpath d=%27M19 6 11 26h3l8-20z%27 fill=%27%23ff3347%27/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/pricing.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/interact.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body data-page="home">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="stage-shade" aria-hidden="true"></div>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__brand">HARSH<span>/</span>STUDIO</div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <div class="loader__num mono">Warming up the tyres</div>
+  </div>
+
+  <main id="top">
+    <!-- SH-01 Ignition: pinned hero -->
+    <section class="chapter chapter--pin hero" id="hero" data-chapter data-shot="sh01" data-shot-portrait="sh01v" data-label="SH-01" data-focal="0.62" style="--pin:170vh">
+      <div class="pin-inner">
+        <div class="hero__inner">
+          <p class="kicker mono" data-scramble>Independent web studio — India / Remote</p>
+          <h1 class="hero__title" aria-label="Built for speed. Tuned by hand.">
+            <span class="line" data-split="chars">Built for</span>
+            <span class="line line--outline" data-split="chars">speed.</span>
+            <span class="line" data-split="chars">Tuned by <em>hand.</em></span>
+          </h1>
+          <p class="hero__lede" data-reveal>I'm Harsh — one developer, zero account managers. I design and build websites that load before your visitor blinks, and I price them in the open.</p>
+          <div class="hero__actions" data-reveal>
+            <a class="btn btn--brake" href="pricing.html">See the prices</a>
+            <a class="btn btn--ghost" href="work.html">View the work</a>
+          </div>
+        </div>
+        <div class="scroll-cue mono" aria-hidden="true"><span>Scroll to throttle</span><i></i></div>
+      </div>
+    </section>
+
+    <!-- Original clip: studio intro -->
+    <section class="chapter scene about" id="studio" data-chapter data-shot="loop" data-mode="loop" data-label="LOOP" data-scene>
+      <div class="col-right">
+        <p class="eyebrow mono" data-scramble>The driver</p>
+        <h2 class="display" data-split="words">A studio of one, built like a race team.</h2>
+        <p class="body" data-reveal>Big agencies put four people between you and the person writing your code. Here there's one: me. You talk to the builder, decisions happen in hours, and nothing gets lost in a handoff.</p>
+        <div class="stats">
+          <div class="stat" data-reveal><b data-count="48">0</b><span>sites shipped</span></div>
+          <div class="stat" data-reveal><b data-count="97">0</b><span>avg. Lighthouse</span></div>
+          <div class="stat" data-reveal><b data-count="14">0</b><span>days, avg. launch</span></div>
+          <div class="stat" data-reveal><b data-count="4.9" data-decimals="1">0</b><span>client rating</span></div>
+        </div>
+        <p data-reveal><a class="link-arrow" href="about.html">The full story <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- SH-06 Chase cam: where to next -->
+    <section class="chapter scene" id="routes" data-chapter data-shot="sh06" data-label="SH-06" data-scene>
+      <div class="col-right col-right--wide">
+        <p class="eyebrow mono" data-scramble>Pick a line</p>
+        <h2 class="display" data-split="words">Everything you need to decide, on three pages.</h2>
+        <nav class="routes" aria-label="Explore">
+          <a class="route" href="services.html" data-reveal><b>Services</b><span>What I build, and the 14-day process behind it.</span><i aria-hidden="true">↗</i></a>
+          <a class="route" href="work.html" data-reveal><b>Work</b><span>Recent launches and the numbers they moved.</span><i aria-hidden="true">↗</i></a>
+          <a class="route" href="pricing.html" data-reveal><b>Pricing</b><span>Fixed prices, the cost split, and the FAQ.</span><i aria-hidden="true">↗</i></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="voices" id="voices" aria-label="Client notes">
+      <div class="marquee" data-reveal data-cursor="Pause">
+        <div class="marquee__track">
+          <span>“Launched in 11 days. Our old agency quoted 3 months.” — Neha, Kaapi Co.</span>
+          <span>“The only dev who replied on a Sunday.” — Arjun, Fieldnote</span>
+          <span>“Bookings up 2.4× in the first month.” — Dr. Mehra Clinic</span>
+          <span>“Clear price, zero surprises.” — Rohan, Northpeak</span>
+          <span>“Launched in 11 days. Our old agency quoted 3 months.” — Neha, Kaapi Co.</span>
+          <span>“The only dev who replied on a Sunday.” — Arjun, Fieldnote</span>
+          <span>“Bookings up 2.4× in the first month.” — Dr. Mehra Clinic</span>
+          <span>“Clear price, zero surprises.” — Rohan, Northpeak</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SH-07 Pass-by: set piece C -->
+    <section class="chapter chapter--pin passby" id="contact-cta" data-chapter data-shot="sh07" data-shot-portrait="sh07v" data-label="SH-07" data-piece="passby" data-pass="0.5" data-center style="--pin:230vh">
+      <div class="pin-inner">
+        <p class="eyebrow mono">Lights out</p>
+        <h2 class="cta__title" aria-label="Let's go sideways.">
+          <span class="line">Let's go</span>
+          <span class="line line--brake" data-slam>sideways.</span>
+        </h2>
+        <p class="body body--center">Two slots open for October. Tell me what you're building and I'll reply with a fixed quote within 24 hours.</p>
+        <div class="hero__actions hero__actions--center">
+          <a class="btn btn--brake btn--lg" href="contact.html">Start a project</a>
+          <button class="btn btn--ghost btn--lg" type="button" data-copy="hello@harsh.studio">Copy email</button>
+        </div>
+        <div class="wipe" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <script src="js/shots.js"></script>
+  <script src="js/director.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/interact.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/pieces.js"></script>
+  <script src="js/chrome.js"></script>
+</body>
+</html>
