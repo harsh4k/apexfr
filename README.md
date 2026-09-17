@@ -1,39 +1,56 @@
 # Late Apex
 
-Website for Late Apex, Harshit Chauhan's independent web studio in Mumbai.
-Six pages plus four legal pages, with AI-generated night-drift footage that
-plays frame by frame as you scroll.
+**Late Apex** is an independent web studio concept by **Harshit Chauhan**, based in Mumbai.
 
-## Run it
+The site is built around a cinematic, automotive-inspired visual language, with AI-generated night-drift footage that progresses frame-by-frame as the user scrolls. The experience combines motion, typography, and interaction to create a studio website that feels more like a digital piece than a conventional agency template.
 
-```bash
-npm install
-npm run serve
-```
+## About
 
-Open http://localhost:5173.
+Late Apex explores how a small independent studio can present itself through:
 
-## Check it
+* Scroll-driven visual storytelling
+* Frame-by-frame video animation
+* Motion-focused interactions
+* Minimal editorial typography
+* Automotive-inspired art direction
+* Responsive layouts across desktop, tablet, and mobile
 
-```bash
-npm run lint
-npm test
-```
+The project includes **six primary pages** alongside **four legal pages**.
 
-`npm test` runs Playwright across desktop, laptop, tablet and two phone sizes:
-page health (errors, clipped text, sideways scroll, broken links), pricing and
-form behaviour, legal pages, scroll smoothness, and visual snapshots.
+## Project Structure
 
-## Change content
+| Area             | Location                        |
+| ---------------- | ------------------------------- |
+| Page content     | `.work/pages/<page>.html`       |
+| Legal content    | `.work/legal/<page>.html`       |
+| Pricing          | `RATES` in `site/js/pricing.js` |
+| Brand details    | `site/js/brand.js`              |
+| Page generation  | `.work/build_pages.py`          |
+| Project guidance | `AGENTS.md`                     |
 
-| To change | Edit | Then |
-|---|---|---|
-| Page text | `.work/pages/<page>.html` | `python .work/build_pages.py` |
-| Legal text | `.work/legal/<page>.html` | `python .work/build_pages.py` |
-| Prices | `RATES` in `site/js/pricing.js` | nothing |
-| Name, email, profile links | `site/js/brand.js` | nothing |
+## Visual System
+
+The visual direction is intentionally restrained, focusing on:
+
+* Dark cinematic environments
+* High-contrast typography
+* Large editorial layouts
+* Smooth scrolling
+* Scroll-synchronized motion
+* AI-generated night driving footage
+
+The hero experience uses generated footage broken into individual frames, allowing the animation to react directly to scroll position rather than behaving like a conventional autoplay video.
 
 ## Footage
 
-Frames are generated from the source clips and are not in git (about 350 MB).
-To rebuild them, see "Where things live" in `AGENTS.md`.
+The scroll-driven footage is generated from source clips and stored separately from the repository due to its size.
+
+The complete frame sequence is approximately **350 MB**.
+
+Instructions for rebuilding the footage are documented in `AGENTS.md`.
+
+## Project Notes
+
+Late Apex was created as an experimental independent studio website, primarily exploring **art direction, motion design, interaction, and frontend implementation** rather than representing a traditional production agency.
+
+It is intentionally treated as a standalone creative project.
