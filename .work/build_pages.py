@@ -2,7 +2,7 @@
 fragments in .work/legal/, wrapped in one shared shell."""
 import pathlib, re, html
 
-ROOT = pathlib.Path("X:/Projects/Websites/Webci")
+ROOT = pathlib.Path(__file__).resolve().parents[1]
 FAVICON = ("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E"
            "%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%2307080b%27/%3E"
            "%3Cpath d=%27M14 52 L29 14%27 stroke=%27%23f2efe9%27 stroke-width=%277%27 stroke-linecap=%27round%27 fill=%27none%27/%3E"
@@ -19,7 +19,7 @@ PAGES = {
   "pricing": ("Pricing — Late Apex", "How Late Apex prices a website: number of pages times their complexity, with a live estimate in INR or USD."),
   "about": ("About — Late Apex", "Harshit Chauhan, the developer behind Late Apex: how he works and what he builds."),
   "404": ("Page not found — Late Apex", "This page doesn't exist on the Late Apex site."),
-  "contact": ("Contact — Late Apex", "Send a project brief to Late Apex and get a fixed quote within a working day."),
+  "contact": ("Contact — Late Apex", "Try the Late Apex project brief demo or find the studio’s profile links."),
 }
 LEGAL = {
   "privacy": ("Privacy Policy", "How Late Apex collects, uses and protects personal data under India's DPDP Act, GDPR and CCPA."),

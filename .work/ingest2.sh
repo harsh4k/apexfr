@@ -2,7 +2,10 @@
 # ingest2.sh SHOT — 2x motion-interpolated WebP tiers into .work/frames_new/SHOT/<width>/
 # Source: .work/shots/SHOT.mp4, or for "loop" the upscaled stills in .work/loopsrc/
 set -e
-id=$1; W="X:/Projects/Websites/Webci/.work"; OUT="$W/frames_new/$id"
+id=${1:-}
+case "$id" in ""|*[!A-Za-z0-9_-]*) echo "Usage: $0 SHOT" >&2; exit 1 ;; esac
+W=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+OUT="$W/frames_new/$id"
 tmp="$W/tmp2_$id"; rm -rf "$tmp" "$OUT"; mkdir -p "$tmp"
 MI="minterpolate=fps=48:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1"
 if [ "$id" = loop ]; then

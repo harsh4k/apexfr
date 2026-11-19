@@ -1,7 +1,7 @@
 // Shared test helpers. PAGES is the single list every suite iterates, so a
 // new page gets smoke, layout and visual coverage by adding one line.
 import { expect } from "@playwright/test";
-import { readdirSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 
 export const PAGES = readdirSync("site")
   .filter((f) => f.endsWith(".html") && f !== "404.html")
@@ -25,6 +25,20 @@ export function watch(page) {
 // don't depend on them, and downloading them per test dominated run time.
 export async function open(page, file, { frames = false } = {}) {
   if (!frames) await page.route("**/frames/**", (route) => route.abort("aborted"));
+  else if (!existsSync("site/frames")) {
+    // The footage pack is stored separately. Numbered test frames exercise the
+    // same loading, decoding, blending and scroll paths in a fresh checkout.
+    await page.route("**/frames/**/f*.webp", (route) => {
+      const pathname = new URL(route.request().url()).pathname;
+      const frame = Number(pathname.match(/\/f(\d+)\.webp$/)?.[1]);
+      if (!Number.isInteger(frame)) return route.continue();
+      const hue = frame * 59 % 360;
+      return route.fulfill({
+        contentType: "image/svg+xml",
+        body: `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="54"><rect width="96" height="54" fill="hsl(${hue},80%,50%)"/></svg>`,
+      });
+    });
+  }
   await page.goto(`/${file}`);
   await page.waitForFunction(() => !document.body.classList.contains("is-loading"), null, { timeout: 30_000 });
   await page.evaluate(() => document.fonts && document.fonts.ready);

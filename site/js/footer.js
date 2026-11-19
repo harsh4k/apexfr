@@ -28,10 +28,10 @@
         <span class="status mono"><i></i>Taking new projects</span>
       </div>
       <form class="news" id="news" data-reveal novalidate>
-        <label for="newsEmail">Occasional notes on building fast, honest websites. No spam, unsubscribe anytime.</label>
+        <label for="newsEmail">Newsletter preview. Enter a sample email to try the form.</label>
         <div class="news__field">
           <input id="newsEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" required />
-          <button class="btn btn--brake" type="submit">Subscribe</button>
+          <button class="btn btn--brake" type="submit">Check email</button>
         </div>
         <p class="news__msg mono" id="newsMsg" role="status"></p>
       </form>
@@ -51,7 +51,7 @@
       <button class="to-top mono" id="toTop" type="button">Back to top ↑</button>
     </div>`;
 
-  // Newsletter: demo only — validates and confirms, sends nothing.
+  // Newsletter preview.
   const form = document.getElementById("news");
   const msg = document.getElementById("newsMsg");
   form.addEventListener("submit", (e) => {
@@ -62,8 +62,7 @@
       input.focus();
       return;
     }
-    msg.textContent = "You're on the grid. First notes land next month.";
-    form.reset();
+    msg.textContent = "That email is valid. This preview stays on this page.";
   });
 
   // Fit the wordmark edge to edge

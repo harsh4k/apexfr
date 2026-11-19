@@ -1,7 +1,10 @@
 #!/bin/sh
 # ingest.sh SHOT  — .work/shots/SHOT.mp4 → WebP tiers in site/frames/SHOT/<width>/
 set -e
-id=$1; W="X:/Projects/Websites/Webci/.work"; OUT="X:/Projects/Websites/Webci/site/frames/$id"
+id=${1:-}
+case "$id" in ""|*[!A-Za-z0-9_-]*) echo "Usage: $0 SHOT" >&2; exit 1 ;; esac
+W=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+OUT="$W/../site/frames/$id"
 src="$W/shots/$id.mp4"
 wd=$(ffprobe -v error -select_streams v -show_entries stream=width -of csv=p=0 "$src")
 ht=$(ffprobe -v error -select_streams v -show_entries stream=height -of csv=p=0 "$src")

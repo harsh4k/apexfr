@@ -49,8 +49,29 @@ The complete frame sequence is approximately **350 MB**.
 
 Instructions for rebuilding the footage are documented in `AGENTS.md`.
 
+## Run locally
+
+```sh
+npm ci
+npm run serve
+```
+
+Open `http://localhost:5173`. The pages work from a fresh checkout. The frame-by-frame animation needs the separately stored footage. The project brief and newsletter are demos that validate input in the browser. Use the studio’s profile links for real enquiries.
+
+```sh
+npm run lint
+npx playwright install chromium
+npm test
+```
+
+Motion tests use a small generated frame sequence when `site/frames/` is absent. Put the original frame pack there to test the actual footage.
+
 ## Project Notes
 
 Late Apex was created as an experimental independent studio website, primarily exploring **art direction, motion design, interaction, and frontend implementation** rather than representing a traditional production agency.
 
 It is intentionally treated as a standalone creative project.
+
+## License
+
+The original site code and development tools are available under the [MIT License](LICENSE). Brand assets, copy, footage, legal templates, screenshots, fonts, and third-party components retain their respective terms.
