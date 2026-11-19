@@ -32,7 +32,7 @@ test("estimator adds pages, extras and rush correctly", async ({ page }) => {
   await expect(page.locator("#bMsg")).toHaveValue(/7 pages/);
 });
 
-test("project brief validates, then confirms", async ({ page }) => {
+test("project brief validates and keeps the user's draft", async ({ page }) => {
   await open(page, "contact.html");
   const form = page.locator("#brief");
   await form.scrollIntoViewIfNeeded();
@@ -43,16 +43,20 @@ test("project brief validates, then confirms", async ({ page }) => {
   await page.fill("#bEmail", "test@example.com");
   await page.fill("#bMsg", "A small launch site.");
   await form.locator('button[type="submit"]').click();
-  await expect(page.locator("#briefMsg")).toContainText("Thanks, Test");
+  await expect(page.locator("#briefMsg")).toContainText("This demo keeps the details on this page.");
+  await expect(page.locator("#bMsg")).toHaveValue("A small launch site.");
 });
 
-test("newsletter rejects a bad email", async ({ page }) => {
+test("newsletter validates a sample address without promising a subscription", async ({ page }) => {
   await open(page, "index.html");
   const input = page.locator("#newsEmail");
   await input.scrollIntoViewIfNeeded();
   await input.fill("not-an-email");
   await page.locator("#news button[type=submit]").click();
-  await expect(page.locator("#newsMsg")).not.toBeEmpty();
+  await expect(page.locator("#newsMsg")).toContainText("That email looks off");
+  await input.fill("test@example.com");
+  await page.locator("#news button[type=submit]").click();
+  await expect(page.locator("#newsMsg")).toContainText("This preview stays on this page.");
 });
 
 test("mobile menu opens, traps nothing, and closes on Escape", async ({ page }, info) => {
